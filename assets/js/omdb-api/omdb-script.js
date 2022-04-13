@@ -48,7 +48,7 @@ $("#movies").append().html(
                         <option value="thriller">Thriller</option>
                     </select>
                 </div>
-                <a class="waves-effect waves-light btn" id="movieBtn">button</a>
+                <a class="waves-effect waves-light btn" id="movieBtn">New Movie</a>
                 </div>
             </div>
         </div>
@@ -87,9 +87,14 @@ $("#movieBtn").on("click", function (event) {
     else if (selectedGenre == "adventure") {
         var selectedArr = adventure;
     }
-    else {
+    else if (selectedGenre == "all") {
         var selectedArr = all;
     }
+    else {
+        console.log("Please pick a genre.")
+        return;
+    }
+
     console.log(selectedArr);
 
     // randomly generates a number based on the selected genre's length
