@@ -1,8 +1,9 @@
-var min = 10000;
+function getRandomSong() {
+    var min = 10000;
 var max = 10010000;
 
-// var trackID = Math.floor(Math.random()*(max - min + 1) + min);
-var trackID = 10010000;
+var trackID = Math.floor(Math.random()*(max - min + 1) + min);
+// var trackID = 10010000;
 
 var options = {
 	method: 'GET',
@@ -16,3 +17,7 @@ fetch(`https://deezerdevs-deezer.p.rapidapi.com/track/${trackID}`, options)
 	.then(response => response.json())
 	.then(response => console.log(response))
 	.catch(err => console.error(err));
+}
+   
+
+
