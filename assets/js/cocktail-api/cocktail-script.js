@@ -8,7 +8,7 @@ fetch(cocktailURL)
         console.log("Cocktail Data: ", data.drinks[0]);
         var randomDrink = data.drinks[0];
 
-        $("body").prepend().html(
+        $("#cocktails").prepend().html(
             `<div id="cocktail">
                 <h4>${randomDrink.strDrink}</h4>
                 <h5>${randomDrink.strAlcoholic}</h5>
