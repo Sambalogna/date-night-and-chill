@@ -27,7 +27,7 @@ function getFood() {
         console.log(error)
     })
 }
-getFood();
+//getFood();
 // card for information to go into. 
 {/* <div class="row">
 <div class="col s12 m7">
