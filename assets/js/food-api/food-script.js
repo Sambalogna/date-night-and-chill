@@ -19,15 +19,15 @@ function getFood() {
     .then(response => {
       console.log(response)
       console.log(response.feed[0].display.displayName)
-      document.getElementById('test').textContent = response.feed[0].display.displayName
       var image1 = response.feed[0].display.images[0]
-      document.getElementById('testIMG').src = URL.createObjectURL(image1)
+      $("body").append().html(`<div id="test">${response.feed[0].display.displayName}</div><img width="35%" src="${image1}"/>`)
+      //document.getElementById('testIMG').src = URL.createObjectURL(image1)
     })
     .catch(error => {
         console.log(error)
     })
 }
-//getFood();
+getFood();
 // card for information to go into. 
 {/* <div class="row">
 <div class="col s12 m7">
