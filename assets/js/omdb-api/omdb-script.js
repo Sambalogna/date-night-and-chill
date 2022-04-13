@@ -21,7 +21,7 @@ console.log(adventure);
 console.log(all);
 
 // creates a button and dropdown menu for movie genres
-$("body").append().html(
+$("#movies").append().html(
     `<form id="genreSelection">
         <label for="genres">Genre: </label>
         <select name="genres" id="genres">
@@ -88,11 +88,12 @@ $("#movieBtn").on("click", function (event) {
             console.log("movie: ", data);
             var movieData = data;
 
-            $("body").append().html(
+            $("#movies").append().html(
                 `<div id="movie">
-                 <h4>${movieData.Title} <sup>${movieData.Year}</sup></h4>
-                 <h5>${movieData.Plot}</h5>
-                 <img class="movieImg" width="35%" src= "${movieData.Poster}"/>
-             </div>`);
+                    <h4>${movieData.Title} <sup>${movieData.Year}</sup></h4>
+                    <h5>${movieData.Plot}</h5>
+                    <img class="movieImg" width="35%" src= "${movieData.Poster}"/>
+                </div>`
+            );
         });
 });
