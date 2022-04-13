@@ -1,5 +1,8 @@
 // omdb api
-var omdbApi = "http://www.omdbapi.com/?apikey=7b7875f8&t=";
+var omdbApi = "https://www.omdbapi.com/?apikey=7b7875f8&t=";
+$(document).ready(function () {
+    $('select').formSelect();
+});
 
 // movies
 var romance = ["It's a Wonderful Life", "Casablanca", "Your Name.", "Eternal Sunshine of the Spotless Mind", "Gone with the Wind", "Howl's Moving Castle", "Her", "The Notebook", "The Fault in Our Stars", "Midnight in Paris", "500 Days of Summer", "Love, Simon", "A Star Is Born", "50 First Dates", "La La Land", "Titanic", "Edward Scissorhands", "When a Man Loves a Woman", "Kate & Leopold", "The Perks of Being a Wallflower"];
@@ -22,18 +25,36 @@ console.log(all);
 
 // creates a button and dropdown menu for movie genres
 $("#movies").append().html(
-    `<form id="genreSelection">
-        <label for="genres">Genre: </label>
-        <select name="genres" id="genres">
-            <option value="all">All</option>
-            <option value="action">Action</option>
-            <option value="adventure">Adventure</option>
-            <option value="drama">Drama</option>
-            <option value="romance">Romance</option>
-            <option value="thriller">Thriller</option>
-        </select>
-        <button id="movieBtn">Test</button>
-    </form>`
+    `
+    <div class="row">
+        <div class="col s12 m7">
+            <div class="card">
+                <div id="movieImg" class="card-image">
+                    <span class="card-title">Card Title</span>
+                </div>
+                <div class="card-content">
+                    <div id="movieInfo">
+                    </div>
+                </div>
+                <div class="card-action">
+                <div class="input-field col s12" id="genreSelection">
+                    <select name="genres" id="genres">
+                        <option value="" disabled selected>Pick a Genre:</option>
+                        <option value="all">All</option>
+                        <option value="action">Action</option>
+                        <option value="adventure">Adventure</option>
+                        <option value="drama">Drama</option>
+                        <option value="romance">Romance</option>
+                        <option value="thriller">Thriller</option>
+                    </select>
+                </div>
+                <a class="waves-effect waves-light btn" id="movieBtn">button</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+`
 );
 
 // adds click listener to execute movie generation
@@ -88,12 +109,14 @@ $("#movieBtn").on("click", function (event) {
             console.log("movie: ", data);
             var movieData = data;
 
-            $("#movies").append().html(
+            $("#movieInfo").append().html(
                 `<div id="movie">
                     <h4>${movieData.Title} <sup>${movieData.Year}</sup></h4>
                     <h5>${movieData.Plot}</h5>
-                    <img class="movieImg" width="35%" src= "${movieData.Poster}"/>
                 </div>`
             );
+            $("#movieImg").append().html(
+                `<img class="movieImg" width="15%" src="${movieData.Poster}" />`
+            )
         });
 });
