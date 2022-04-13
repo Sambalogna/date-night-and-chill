@@ -23,8 +23,9 @@ fetch(`https://deezerdevs-deezer.p.rapidapi.com/track/${trackID}`, deezerOptions
 function displaySong(theData) {
     console.log(theData);
 
-    var coverImage = theData.md5_image;
-    console.log(coverImage);
+    var coverImage = theData.album.cover;
+    var largeImage = `${coverImage}?size=big`
+    console.log(largeImage);
     
     var songTitle = theData.title;
     console.log(songTitle);
@@ -38,9 +39,9 @@ function displaySong(theData) {
     
 
     var songDiv = document.createElement("div");
-    songDiv.appendChild(coverImage);
-    songDiv.appendChild(songTitle);
-    songDiv.appendChild(artistName);
+    // songDiv.appendChild(coverImage);
+    // songDiv.appendChild(songTitle);
+    // songDiv.appendChild(artistName);
 
 }
    
