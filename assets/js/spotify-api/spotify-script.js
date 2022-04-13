@@ -5,7 +5,7 @@ var max = 10010000;
 var trackID = Math.floor(Math.random()*(max - min + 1) + min);
 // var trackID = 10010000;
 
-var options = {
+var deezerOptions = {
 	method: 'GET',
 	headers: {
 		'X-RapidAPI-Host': 'deezerdevs-deezer.p.rapidapi.com',
@@ -13,11 +13,28 @@ var options = {
 	}
 };
 
-fetch(`https://deezerdevs-deezer.p.rapidapi.com/track/${trackID}`, options)
+fetch(`https://deezerdevs-deezer.p.rapidapi.com/track/${trackID}`, deezerOptions)
 	.then(response => response.json())
-	.then(response => console.log(response))
+	.then(data => displaySong(data))
 	.catch(err => console.error(err));
+}
+
+
+function displaySong(theData) {
+    console.log(theData);
+
+    var songTitle = theData.title;
+    console.log(songTitle);
+
+    var artistName = theData.artist["name"];
+    console.log(artistName);
+
+    var songLink = theData.link;
+    console.log(songLink);
+
+    var coverImage = theData.md5_image;
+    console.log(coverImage);
 }
    
 
-
+getRandomSong();
