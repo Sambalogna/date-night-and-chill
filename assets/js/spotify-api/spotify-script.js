@@ -23,26 +23,48 @@ fetch(`https://deezerdevs-deezer.p.rapidapi.com/track/${trackID}`, deezerOptions
 function displaySong(theData) {
     console.log(theData);
 
+    var songDiv = document.createElement("div");
+    songDiv.classList.add("musicSection");
+
+    //Setting and appending song image
     var coverImage = theData.album.cover;
     var largeImage = `${coverImage}?size=big`
     console.log(largeImage);
-    
+    var imgChild = document.createElement("img");
+    imgChild.setAttribute("src", largeImage);
+    songDiv.appendChild(imgChild);
+
+    //Setting and appending song title
     var songTitle = theData.title;
     console.log(songTitle);
+    var titleChild = document.createElement("h6");
+    titleChild.innerHTML = songTitle;
+    songDiv.appendChild(titleChild);
 
+    //Setting and appending artist name
     var artistName = theData.artist["name"];
     console.log(artistName);
+    var artistChild = document.createElement("p");
+    artistChild.innerHTML = artistName;
+    songDiv.appendChild(artistChild);
 
+    //Setting and appending song link button
     var songLink = theData.link;
     console.log(songLink);
+    var linkChild = document.createElement("a")
+    linkChild.setAttribute("href", songLink);
+    linkChild.innerHTML = "Listen";
+    songDiv.appendChild(linkChild);
+
+    // var songPreview = theData.preview;
+    // var previewChild = document.createElement("div");
+    // previewChild.innerHTML = songPreview;
+    // songDiv.appendChild(previewChild);
 
     
 
-    var songDiv = document.createElement("div");
-    // songDiv.appendChild(coverImage);
-    // songDiv.appendChild(songTitle);
-    // songDiv.appendChild(artistName);
-
+    var page = document.querySelector("#firstPage");
+    page.appendChild(songDiv);
 }
    
 
