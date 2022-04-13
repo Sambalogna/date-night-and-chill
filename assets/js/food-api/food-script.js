@@ -18,16 +18,34 @@ function getFood() {
     })
     .then(response => {
       console.log(response)
-      console.log(response.feed[0].display.displayName)
-      var image1 = response.feed[0].display.images[0]
-      $("body").append().html(`<div id="test">${response.feed[0].display.displayName}</div><img width="35%" src="${image1}"/>`)
-      //document.getElementById('testIMG').src = URL.createObjectURL(image1)
+      var randomNum = Math.floor(Math.random()*22)
+      console.log(response.feed[randomNum].display.displayName)
+      var image1 = response.feed[randomNum].display.images[0]
+      $("body").append().html(`<div id="dinner">
+      <div class="row">
+        <div class="col s12 m7">
+            <div class="card">
+            <div class="card-image">
+            <img height="250px" width="50px" src="${image1}">
+            <span class="card-title">Card Title</span>
+            </div>
+            <div class="card-content">
+      <p>${response.feed[randomNum].display.displayName}</p>
+    </div>
+    <div class="card-action">
+      <a href="#">This is a link</a>
+    </div>
+  </div>
+</div>
+</div>
+      </div>`)
+      
     })
     .catch(error => {
         console.log(error)
     })
 }
-//getFood();
+getFood();
 // card for information to go into. 
 {/* <div class="row">
 <div class="col s12 m7">

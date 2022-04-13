@@ -11,14 +11,14 @@ var drama = ["The Shawshank Redemption", "The Godfather", "Pulp Fiction", "Forre
 var adventure = ["Interstellar", "The Lord of the Rings: The Fellowship of the Ring", "Star Wars", "Spirited Away", "The Lion King", "Indiana Jones and the Raiders of the Lost Ark", "WALL·E", "Princess Mononoke", "Stand by Me", "The Wizard of Oz", "Pirates of the Caribbean: The Curse of the Black Pearl", "Cast Away", "The Iron Giant", "Big Hero 6", "Harry Potter and the Sorcerer's Stone"]
 var all = action.concat(romance, horror, thriller, comedy, action, drama, adventure);
 
-console.log(romance);
-console.log(horror);
-console.log(thriller);
-console.log(comedy);
-console.log(action);
-console.log(drama);
-console.log(adventure);
-console.log(all);
+// console.log(romance);
+// console.log(horror);
+// console.log(thriller);
+// console.log(comedy);
+// console.log(action);
+// console.log(drama);
+// console.log(adventure);
+// console.log(all);
 
 // creates a button and dropdown menu for movie genres
 $("#movies").append().html(
