@@ -1,7 +1,7 @@
 //console.log('test')
 //console.log('test2')
 
-const options = {
+const helpers = {
 	method: 'GET',
 	headers: {
 		'X-RapidAPI-Host': 'yummly2.p.rapidapi.com',
@@ -12,7 +12,8 @@ const options = {
 var yummlyRapidApiURL =' https://yummly2.p.rapidapi.com/feeds/list?limit=1000&start=0'
 
 function getFood() {
-    fetch(yummlyRapidApiURL, options)
+    //event.preventDefault();
+    fetch(yummlyRapidApiURL, helpers)
     .then(response => {
       return response.json();
     })
@@ -21,7 +22,7 @@ function getFood() {
       var randomNum = Math.floor(Math.random()*22)
       console.log(response.feed[randomNum].display.displayName)
       var image1 = response.feed[randomNum].display.images[0]
-      $("body").append().html(`<div id="dinner">
+      $("#dinner").append().html(`
       <div class="row">
         <div class="col s12 m7">
             <div class="card">
@@ -33,12 +34,11 @@ function getFood() {
       <p>${response.feed[randomNum].display.displayName}</p>
     </div>
     <div class="card-action">
-      <a onclick="getFood()" href="#">This is a link</a>
+      <a onclick="getFood()" href="#dinner">This is a link</a>
     </div>
   </div>
 </div>
-</div>
-      </div>`)
+</div>`)
       
     })
     .catch(error => {
