@@ -26,14 +26,14 @@ function getFood() {
         <div class="col s12 m7">
             <div class="card">
             <div class="card-image">
-            <img height="250px" width="50px" src="${image1}">
-            <span class="card-title">Card Title</span>
+            <img height="450px" width="200px" src="${image1}">
+            <span class="card-title">${response.feed[randomNum].display.displayName}</span>
             </div>
             <div class="card-content">
       <p>${response.feed[randomNum].display.displayName}</p>
     </div>
     <div class="card-action">
-      <a href="#">This is a link</a>
+      <a onclick="getFood()" href="#">This is a link</a>
     </div>
   </div>
 </div>
@@ -45,7 +45,7 @@ function getFood() {
         console.log(error)
     })
 }
-getFood();
+//getFood();
 // card for information to go into. 
 {/* <div class="row">
 <div class="col s12 m7">
