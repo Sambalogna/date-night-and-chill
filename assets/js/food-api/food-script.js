@@ -1,6 +1,25 @@
 //console.log('test')
 //console.log('test2')
 
+$("#dinner").append().html(`
+<div class="row">
+    <div class="col s12 m7">
+        <div class="card">
+            <div id= "dinnerImage" class="card-image">
+                
+            </div>
+            <div Id="dinnerInfo" class="card-content">
+                
+            </div>
+            <div class="card-action">
+                <a class="waves-effect waves-light btn" id="dinnerBtn" href="#dinner">New Food</a>
+            </div>
+        </div>
+    </div>
+</div>`
+);
+
+
 const helpers = {
 	method: 'GET',
 	headers: {
@@ -22,45 +41,19 @@ function getFood() {
       var randomNum = Math.floor(Math.random()*22)
       console.log(response.feed[randomNum].display.displayName)
       var image1 = response.feed[randomNum].display.images[0]
-      $("#dinner").append().html(`
-      <div class="row">
-        <div class="col s12 m7">
-            <div class="card">
-            <div class="card-image">
-            <img height="450px" width="200px" src="${image1}">
-            <span class="card-title">${response.feed[randomNum].display.displayName}</span>
-            </div>
-            <div class="card-content">
-      <p>${response.feed[randomNum].display.displayName}</p>
-    </div>
-    <div class="card-action">
-      <a onclick="getFood()" href="#dinner">This is a link</a>
-    </div>
-  </div>
-</div>
-</div>`)
+      $("#dinnerImage").append().html(`<img height="450px" width="200px" src="${image1}">
+      <span class="card-title">${response.feed[randomNum].display.displayName}</span>
+        `)
+      $("#dinnerInfo").append().html(`<p>${response.feed[randomNum].display.displayName}</p>`)
       
     })
     .catch(error => {
         console.log(error)
     })
 }
-//getFood();
-// card for information to go into. 
-{/* <div class="row">
-<div class="col s12 m7">
-  <div class="card">
-    <div class="card-image">
-      <img src="images/sample-1.jpg">
-      <span class="card-title">Card Title</span>
-    </div>
-    <div class="card-content">
-      <p>I am a very simple card. I am good at containing small bits of information.
-      I am convenient because I require little markup to use effectively.</p>
-    </div>
-    <div class="card-action">
-      <a href="#">This is a link</a>
-    </div>
-  </div>
-</div>
-</div> */}
+
+$("#dinnerBtn").on("click", function (event) {
+    event.preventDefault();
+
+    //getFood();
+});
