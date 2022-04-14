@@ -123,3 +123,15 @@ footer {
     background-color: rgb(186, 1, 1);
     color: white;
 }
+
+#movieBtn {
+    pointer-events: none;
+}
+
+#saveMovieBtn {
+    pointer-events: none;
+}
+
+.shiftAnimation {
+    transform: scale(0.7);
+}
