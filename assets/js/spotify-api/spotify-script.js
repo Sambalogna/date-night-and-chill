@@ -34,6 +34,7 @@ function displaySong(theData) {
 
   var songDiv = document.createElement("div");
   songDiv.classList.add("musicSection");
+  songDiv.classList.add("cardStyle")
 
   //Setting and appending song image
   var coverImage = theData.album.cover;

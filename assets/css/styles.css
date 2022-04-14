@@ -84,6 +84,36 @@ footer {
 }
 
 
-#resultsPage {
+#movies, #dinner, #cocktails, #game {
     display: none;
+}
+
+#movieImg {
+    width: 250px;
+    height: auto;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 2em;
+}
+
+.cardStyle {
+    background-color: rgb(186, 1, 1);
+    color: black;
+    text-align: center;
+}
+
+.cardStyle span {
+    
+    color: white;
+    font-size: 21px;
+    padding: 0px;
+}
+
+.card {
+    width: 550px;
+}
+
+.btn {
+    background-color: rgb(186, 1, 1);
+    color: white;
 }

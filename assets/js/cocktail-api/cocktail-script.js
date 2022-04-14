@@ -6,7 +6,8 @@ $("#cocktails").append().html(
         <div class="col s12 m7">
             <div class="card">
                 <div id="cocktailImg" class="card-image"></div>
-                <div class="card-content">
+                <div class="card-content cardStyle">
+                    <span>GET MY DRINK!</span>
                     <div id="cocktailInfo"></div>
                 </div>
                 <div class="card-action" id="cocktailBtnBox">

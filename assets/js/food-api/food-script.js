@@ -8,8 +8,8 @@ $("#dinner").append().html(`
             <div id= "dinnerImage" class="card-image">
                 
             </div>
-            <div Id="dinnerInfo" class="card-content">
-                
+            <div Id="dinnerInfo" class="card-content cardStyle">
+                <span>GET MY DRINK!</span>
             </div>
             <div class="card-action">
                 <a class="waves-effect waves-light btn" id="dinnerBtn" href="#dinner">New Food</a>
