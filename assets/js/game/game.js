@@ -9,7 +9,7 @@ $("#game").append().html(
                     <div id="gameInfo"></div>
                 </div>
                 <div class="card-action" id="gameBtnBox">
-                    <a class="waves-effect waves-light btn" id="gamesBtn">New Game</a>
+                    <a class="waves-effect waves-light btn grey darken-2" id="gamesBtn">New Game</a>
                     <span id="howToPlay"></span>
                 </div>
             </div>
@@ -20,7 +20,7 @@ $("#game").append().html(
 );
 
 function randomGame() {
-    var gamesArr = ["Jenga", "UNO", "Battleship", "Off Topic: A Game for Those Slightly Off", "Talk Flirt Dare", "Tabletop Simulator", "Twister", "Sequence", "Truth or Dare", "36 Questions", "Karaoke", "Mad Libs", "Escape Room", "Fuji", "It Takes Two", "New Phone, Who Dis?"];
+    var gamesArr = ["Jenga", "UNO", "Battleship Board Game", "Off Topic: A Game for Those Slightly Off", "Talk Flirt Dare", "Tabletop Simulator", "Twister Game", "Sequence", "Truth or Dare Date Questions", "36 Questions", "Karaoke", "Mad Libs", "Escape Room", "Fuji Board Game", "It Takes Two", "New Phone, Who Dis?"];
 
     console.log(gamesArr);
 
@@ -36,7 +36,7 @@ function randomGame() {
         </div>`
     )
     $("#howToPlay").append().html(
-        `<a class="waves-effect waves-light btn" href="https://www.youtube.com/results?search_query=${gamesArr}">Youtube</a>`
+        `<a class="waves-effect waves-light btn grey darken-2" href="https://www.google.com/search?q=${gamesArr}">Google</a>`
     )
 
 }
