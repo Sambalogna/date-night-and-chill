@@ -1,3 +1,30 @@
+//Defining card structure for the song
+
+$("#song").append().html(
+  `
+  <div class="row">
+      <div class="col s12 m7">
+          <div class="card">
+              
+              <div class="card-content cardStyle">
+                  <span>THE PERFECT SONG!</span>
+                  <div id="songImg" class="card-image"></div>
+                  <div id="audioPlayer"></div>
+                  <div id="songDetails"></div>
+              </div>
+              <div class="card-action" id="songBtnBox">
+                  <a class="waves-effect waves-light btn" id="songBtn">New Song</a>
+                  <span id="howToMake"></span>
+                  <a class="waves-effect waves-light btn" id="saveSongBtn">Confirm choice</a>
+              </div>
+          </div>
+      </div>
+  </div>
+  </div>
+  `
+  );
+
+
 function getRandomSong() {
   var min = 10000;
   var max = 10010000;
@@ -32,29 +59,7 @@ function getRandomSong() {
 function displaySong(theData) {
   console.log(theData);
 
-  $("#song").append().html(
-    `
-    <div class="row">
-        <div class="col s12 m7">
-            <div class="card">
-                
-                <div class="card-content cardStyle">
-                    <span>THE PERFECT SONG!</span>
-                    <div id="songImg" class="card-image"></div>
-                    <div id="audioPlayer"></div>
-                    <div id="songDetails"></div>
-                </div>
-                <div class="card-action" id="songBtnBox">
-                    <a class="waves-effect waves-light btn" id="songBtn">New Song</a>
-                    <span id="howToMake"></span>
-                    <a class="waves-effect waves-light btn" id="saveSongBtn">Confirm choice</a>
-                </div>
-            </div>
-        </div>
-    </div>
-    </div>
-    `
-    );
+  
     
     //Append album cover image
     $("#songImg").append().html(
@@ -142,14 +147,9 @@ function displaySong(theData) {
   // var page = document.querySelector("#song");
   // page.appendChild(songDiv);
 
-  $("#songBtn").on("click", function() {
-    console.log("ok c u");
-    getRandomSong();
-  })
 }
 
 
 //Adding functionality to New song button
 
 
-getRandomSong();
