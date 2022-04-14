@@ -45,7 +45,7 @@ function displaySong(theData) {
                     <div id="songDetails"></div>
                 </div>
                 <div class="card-action" id="songBtnBox">
-                    <a class="waves-effect waves-light btn" id="songBtn">New Drink</a>
+                    <a class="waves-effect waves-light btn" id="songBtn">New Song</a>
                     <span id="howToMake"></span>
                     <a class="waves-effect waves-light btn" id="saveSongBtn">Confirm choice</a>
                 </div>
@@ -55,24 +55,33 @@ function displaySong(theData) {
     </div>
     `
     );
-
+    
+    //Append album cover image
     $("#songImg").append().html(
       `<img class="movieImg" width="15%" src="${theData.album.cover}?size=big" />`
   )
 
-
+      //Append 30 second song preview
     $("#audioPlayer").append().html(
       `<div id="audioBar">
-          <audio src = "${theData.preview}"></audio>
+          <audio src = "${theData.preview}" controls></audio>
       </div>`
   )
 
+  //Append Song title and artist
   $("#songDetails").append().html(
     `<div id= "titleSong">
         <h4>${theData.title}</h4>
         <h5>${theData.artist["name"]}</h5>
     </div>`
   )
+
+
+  var songDisplayDiv = document.querySelector("#song");
+  if(songDisplayDiv.style.display == "block")
+  {
+    $("#songBtn").css("pointerEvents", "auto");
+  }
 
   // ------------------------------------------------
 
@@ -91,7 +100,7 @@ function displaySong(theData) {
   // var lineBreak = document.createElement("br");
   // songDiv.appendChild(lineBreak);
 
-  // //Setting and appending audio preview
+  //Setting and appending audio preview
   // var songPreview = theData.preview;
   // var audioPlayer = document.createElement("audio");
   // audioPlayer.setAttribute("src", songPreview);
@@ -132,6 +141,15 @@ function displaySong(theData) {
 
   // var page = document.querySelector("#song");
   // page.appendChild(songDiv);
+
+  $("#songBtn").on("click", function() {
+    console.log("ok c u");
+    getRandomSong();
+  })
 }
+
+
+//Adding functionality to New song button
+
 
 getRandomSong();

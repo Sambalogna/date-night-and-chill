@@ -71,4 +71,9 @@ function displaySongs() {
     $("#songBtn").css("pointerEvents", "auto");
 }
 
+$("#songBtn").on("click", function() {
+    console.log("ok c u");
+    getRandomSong();
+  })
+
 

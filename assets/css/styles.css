@@ -97,7 +97,7 @@ footer {
     margin-top: 2em;
 }
 
-#cocktailImg {
+#cocktailImg, #songImg {
     width: 320px;
     height: auto;
     margin-right: auto;
