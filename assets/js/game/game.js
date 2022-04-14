@@ -1,8 +1,8 @@
 
 $("#game").append().html(
     `
-    <div class="row">
-        <div class="col s12 m7">
+    <div class="container center">
+        <div class="col">
             <div class="card">
                 <div id="gameImg" class="card-image"></div>
                 <div class="card-content">
