@@ -2,7 +2,7 @@
 
 body {
     font-family: 'Bebas Neue', cursive;
-    background-color: rgb(15, 15, 15);
+    background-color: rgb(0, 0, 0);
     color: brown;
 }
 
@@ -13,13 +13,12 @@ body {
     background-position: center center;
     color: white;
     border-radius: 0;
-    border-bottom: 45px solid black;
+    border-bottom: 15px solid black;
     border-top: 45px solid black;
-    padding-bottom: 90px;
     padding-top: 90px;
-    margin-bottom: 25px;
+    /* margin-bottom: 25px; */
     font-weight: bold;
-    height: 780px;
+    height: 792px;
   }
 
   .jumbotron img {
@@ -49,7 +48,7 @@ body {
 .generateBox:hover {
     opacity: 1;
     pointer-events: auto;
-    box-shadow: 0 15px 15px rgba(37, 146, 186, 0.667);
+    box-shadow: 0 15px 15px rgba(21, 87, 111, 0.667);
 }
 
 .generateBox span {
@@ -70,6 +69,14 @@ body {
     border: 1px solid red;
     border-radius: 4px;
     font-size: 21px;
+    cursor: pointer;
+}
+
+footer {
+    text-align: center;
+    color: rgb(193, 35, 35);
+    margin-bottom: 16px;
+    font-size: 18px;
 }
 
 #firstPage {
