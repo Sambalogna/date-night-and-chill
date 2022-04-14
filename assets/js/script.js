@@ -53,4 +53,22 @@ function displayCocktails() {
     $("#cocktailsBtn").css("pointerEvents", "auto");
 }
 
+//Display song card
+$("#cocktailsBtn").on("click", function() {
+    $("#saveCocktailBtn").css("pointerEvents", "auto");
+})
+
+$("#saveCocktailBtn").on("click", function(e) {
+    e.preventDefault();
+    displaySongs();
+})
+
+function displaySongs() {
+    var theBody = document.querySelector("body");
+    theBody.classList.add("songbg");
+    $("#cocktails").css("display", "none");
+    $("#song").css("display", "block");
+    $("#songBtn").css("pointerEvents", "auto");
+}
+
 

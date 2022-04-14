@@ -32,61 +32,105 @@ function getRandomSong() {
 function displaySong(theData) {
   console.log(theData);
 
-  var songDiv = document.createElement("div");
-  songDiv.classList.add("musicSection");
-  songDiv.classList.add("cardStyle")
+  $("#song").append().html(
+    `
+    <div class="row">
+        <div class="col s12 m7">
+            <div class="card">
+                
+                <div class="card-content cardStyle">
+                    <span>THE PERFECT SONG!</span>
+                    <div id="songImg" class="card-image"></div>
+                    <div id="audioPlayer"></div>
+                    <div id="songDetails"></div>
+                </div>
+                <div class="card-action" id="songBtnBox">
+                    <a class="waves-effect waves-light btn" id="songBtn">New Drink</a>
+                    <span id="howToMake"></span>
+                    <a class="waves-effect waves-light btn" id="saveSongBtn">Confirm choice</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    `
+    );
 
-  //Setting and appending song image
-  var coverImage = theData.album.cover;
-  var largeImage = `${coverImage}?size=big`;
-  console.log(largeImage);
-  var imgChild = document.createElement("img");
-  imgChild.setAttribute("src", largeImage);
-  songDiv.appendChild(imgChild);
+    $("#songImg").append().html(
+      `<img class="movieImg" width="15%" src="${theData.album.cover}?size=big" />`
+  )
 
-  var lineBreak = document.createElement("br");
-  songDiv.appendChild(lineBreak);
 
-  //Setting and appending audio preview
-  var songPreview = theData.preview;
-  var audioPlayer = document.createElement("audio");
-  audioPlayer.setAttribute("src", songPreview);
-  audioPlayer.controls = true;
-  songDiv.appendChild(audioPlayer);
+    $("#audioPlayer").append().html(
+      `<div id="audioBar">
+          <audio src = "${theData.preview}"></audio>
+      </div>`
+  )
 
-  //Setting and appending song title
-  var songTitle = theData.title;
-  console.log(songTitle);
-  var titleChild = document.createElement("h6");
-  titleChild.innerHTML = songTitle;
-  songDiv.appendChild(titleChild);
+  $("#songDetails").append().html(
+    `<div id= "titleSong">
+        <h4>${theData.title}</h4>
+        <h5>${theData.artist["name"]}</h5>
+    </div>`
+  )
 
-  //Setting and appending artist name
-  var artistName = theData.artist["name"];
-  console.log(artistName);
-  var artistChild = document.createElement("p");
-  artistChild.innerHTML = artistName;
-  songDiv.appendChild(artistChild);
+  // ------------------------------------------------
 
-  //Setting and appending new song button
-  var newSongBtn = document.createElement("a");
-  newSongBtn.classList.add("btn");
-  newSongBtn.setAttribute("id", "songBtn");
-  newSongBtn.innerHTML = "NEW SONG";
-  songDiv.appendChild(newSongBtn);
+  // var songDiv = document.createElement("div");
+  // songDiv.classList.add("musicSection");
+  // songDiv.classList.add("cardStyle")
 
-  //Setting and appending Confirm song button
-  var confirmSongBtn = document.createElement("a");
-  confirmSongBtn.classList.add("btn");
-  confirmSongBtn.setAttribute("id", "saveSongBtn");
-  confirmSongBtn.innerHTML = "CONFIRM CHOICE";
-  songDiv.appendChild(confirmSongBtn);
+  // //Setting and appending song image
+  // var coverImage = theData.album.cover;
+  // var largeImage = `${coverImage}?size=big`;
+  // console.log(largeImage);
+  // var imgChild = document.createElement("img");
+  // imgChild.setAttribute("src", largeImage);
+  // songDiv.appendChild(imgChild);
 
-  // var previewChild = document.createElement("div");
-  // previewChild.innerHTML = songPreview;
-  // songDiv.appendChild(previewChild);
+  // var lineBreak = document.createElement("br");
+  // songDiv.appendChild(lineBreak);
 
-  // var page = document.querySelector("#firstPage");
+  // //Setting and appending audio preview
+  // var songPreview = theData.preview;
+  // var audioPlayer = document.createElement("audio");
+  // audioPlayer.setAttribute("src", songPreview);
+  // audioPlayer.controls = true;
+  // songDiv.appendChild(audioPlayer);
+
+  // //Setting and appending song title
+  // var songTitle = theData.title;
+  // console.log(songTitle);
+  // var titleChild = document.createElement("h6");
+  // titleChild.innerHTML = songTitle;
+  // songDiv.appendChild(titleChild);
+
+  // //Setting and appending artist name
+  // var artistName = theData.artist["name"];
+  // console.log(artistName);
+  // var artistChild = document.createElement("p");
+  // artistChild.innerHTML = artistName;
+  // songDiv.appendChild(artistChild);
+
+  // //Setting and appending new song button
+  // var newSongBtn = document.createElement("a");
+  // newSongBtn.classList.add("btn");
+  // newSongBtn.setAttribute("id", "songBtn");
+  // newSongBtn.innerHTML = "NEW SONG";
+  // songDiv.appendChild(newSongBtn);
+
+  // //Setting and appending Confirm song button
+  // var confirmSongBtn = document.createElement("a");
+  // confirmSongBtn.classList.add("btn");
+  // confirmSongBtn.setAttribute("id", "saveSongBtn");
+  // confirmSongBtn.innerHTML = "CONFIRM CHOICE";
+  // songDiv.appendChild(confirmSongBtn);
+
+  // // var previewChild = document.createElement("div");
+  // // previewChild.innerHTML = songPreview;
+  // // songDiv.appendChild(previewChild);
+
+  // var page = document.querySelector("#song");
   // page.appendChild(songDiv);
 }
 
