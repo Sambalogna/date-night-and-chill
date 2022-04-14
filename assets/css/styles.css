@@ -97,6 +97,14 @@ footer {
     margin-top: 2em;
 }
 
+#cocktailImg {
+    width: 320px;
+    height: auto;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 2em;
+}
+
 .cardStyle {
     background-color: rgb(186, 1, 1);
     color: black;
@@ -124,14 +132,10 @@ footer {
     color: white;
 }
 
-#movieBtn {
+#movieBtn, #dinnerBtn, #cocktailsBtn, #songBtn{
     pointer-events: none;
 }
 
 #saveMovieBtn, #saveFoodBtn, #saveCocktailBtn, #saveGameBtn, #saveSongBtn {
     pointer-events: none;
-}
-
-.shiftAnimation {
-    transform: scale(0.7);
 }

@@ -1,7 +1,6 @@
 //Display movie card
 $("#startBtn").on("click", function (event) {
     event.preventDefault();
-    
     displayMovieBox();
 });
 
@@ -23,13 +22,29 @@ $("#movieBtn").on("click", function() {
 
 $("#saveMovieBtn").on("click", function(event) {
     event.preventDefault();
-    console.log("clickity");
     displayFoodBox();
 })
 
 function displayFoodBox() {
     $("#movies").css("display", "none")
     $("#dinner").css("display", "block");
-
+    $("#dinnerBtn").css("pointerEvents", "auto");
 }
+
+//Display cocktails card
+$("#dinnerBtn").on("click", function() {
+    $("#saveFoodBtn").css("pointerEvents", "auto");
+})
+
+$("#saveFoodBtn").on("click", function(e) {
+    e.preventDefault();
+    displayCocktails();
+})
+
+function displayCocktails() {
+    $("#dinner").css("display", "none");
+    $("#cocktails").css("display", "block");
+    $("#cocktailsBtn").css("pointerEvents", "auto");
+}
+
 
