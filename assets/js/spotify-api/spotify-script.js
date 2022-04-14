@@ -6,7 +6,7 @@ $("#song").append().html(
       <div class="col s12 m7">
           <div class="card">
               
-              <div class="card-content cardStyle">
+              <div class="card-content cardStyle musicCard">
                   <span>THE PERFECT SONG!</span>
                   <div id="songImg" class="card-image"></div>
                   <div id="audioPlayer"></div>

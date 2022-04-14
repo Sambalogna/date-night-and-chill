@@ -105,10 +105,22 @@ footer {
     margin-top: 2em;
 }
 
-.cardStyle {
-    background-color: rgb(186, 1, 1);
-    color: black;
+.cardStyle, .omdbCard {
+    background-color: rgb(60, 2, 2);
+    color: white;
     text-align: center;
+}
+
+.foodCard {
+    background-color: rgb(2, 14, 31);
+}
+
+.cocktailCard {
+    background-color: rgb(24, 1, 44);
+}
+
+.musicCard {
+    background-color: rgb(39, 1, 36);
 }
 
 .cardStyle span {

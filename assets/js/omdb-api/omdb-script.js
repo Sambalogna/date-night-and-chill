@@ -30,7 +30,7 @@ $("#movies").append().html(
         <div class="col s12 m7">
             <div class="card">
                 
-                <div class="card-content cardStyle">
+                <div class="card-content cardStyle omdbCard">
                     <span>GET MY MOVIE!</span>
                     <div id="movieImg" class="card-image">
                     </div>
