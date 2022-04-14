@@ -26,8 +26,8 @@ console.log(all);
 // creates a button and dropdown menu for movie genres
 $("#movies").append().html(
     `
-    <div class="row">
-        <div class="col s12 m7">
+    <div class="container center">
+        <div class="col">
             <div class="card">
                 
                 <div class="card-content cardStyle omdbCard">
