@@ -46,6 +46,8 @@ $("#saveFoodBtn").on("click", function(e) {
 })
 
 function displayCocktails() {
+    var theBody = document.querySelector("body");
+    theBody.classList.add("cocktailbg");
     $("#dinner").css("display", "none");
     $("#cocktails").css("display", "block");
     $("#cocktailsBtn").css("pointerEvents", "auto");
