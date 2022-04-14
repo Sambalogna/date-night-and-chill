@@ -57,6 +57,23 @@ function getFood() {
       <p><a class=""target="_blank"href="${response.feed[randomNum].display.source.sourceRecipeUrl}"> Click Here For TheRecipe </a>
       <a "target="_blank"href="${response.feed[randomNum].display.source.sourceRecipeUrl}"></a></p>`)
 
+            //localStorage Obj;  fix names 
+            var foodRecipeUrl = response.feed[randomNum].display.source.sourceRecipeUrl
+            var foodName = response.feed[randomNum].display.displayName
+
+            var myLocalFoodStore = {
+                foodURL : foodRecipeUrl,
+                foodMoniker : foodName,
+            }
+
+            var foodLocalStorage = JSON.stringify(myLocalFoodStore)
+            localStorage.setItem("FoodStorage", foodLocalStorage);
+
+            var useFoodStorage = JSON.parse(localStorage.getItem("FoodStorage"))
+            console.log(useFoodStorage);
+
+
+
         })
         .catch(error => {
             console.log(error)
