@@ -1,8 +1,178 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+body {
+    font-family: 'Bebas Neue', cursive;
+    background-color: rgb(0, 0, 0);
+    color: brown;
+}
+
+.jumbotron {
+    /* text-align: center; */
+    background-image: url("https://occ-0-2794-2219.1.nflxso.net/dnm/api/v6/E8vDc_W8CLv7-yMQu8KMEC7Rrr8/AAAABT7UknhuCypjHvOjxE1N0-28M7tRwBJsVkDtAzDvNKn7JSnGuypusMzb-FDuGqIs1bo6MHVXUDOlikUNe1ArSY2nQ9__.jpg?r=30e");
+    /* background-size: cover; */
+    background-position: center center;
+    color: white;
+    border-radius: 0;
+    border-bottom: 15px solid black;
+    border-top: 45px solid black;
+    padding-top: 90px;
+    /* margin-bottom: 25px; */
+    font-weight: bold;
+    height: 792px;
+  }
+
+  .jumbotron img {
+      margin-left: 32px;
+      position: relative;
+      bottom: 47px;
+      text-align: center;
+  }
+
+.generateBox {
+    padding-top: 25px;
+    padding-bottom: 25px;
+    padding-left: 40px;
+    padding-right: 40px;
+    background-color: black;
+    /* border: solid red 5px; */
+    border-radius: 7px;
+    width: 350px;
+    margin-left: 15px;
+    text-align: center;
+    position: relative;
+    bottom: 25px;
+    opacity: 0.5;
+    transition: opacity 1.2s ease;
+}
+
+.generateBox:hover {
+    opacity: 1;
+    pointer-events: auto;
+    box-shadow: 0 15px 15px rgba(21, 87, 111, 0.667);
+}
+
+.generateBox span {
+    color: white;
+    padding-bottom: 25px;
+    font-size: 31px;
+}
+
+.generateBox button {
+    margin-top: 15px;
+    background-color: red;
+    color: white;
+    font-family: 'Bebas Neue', cursive;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    padding-left: 95px;
+    padding-right: 95px;
+    border: 1px solid red;
+    border-radius: 4px;
+    font-size: 21px;
+    cursor: pointer;
+}
+
+footer {
+    text-align: center;
+    color: rgb(193, 35, 35);
+    margin-bottom: 16px;
+    font-size: 18px;
+}
+
 #firstPage {
     display: block;
 }
 
 
-#resultsPage {
+#movies, #dinner, #cocktails, #game, #song {
     display: none;
+}
+
+
+#movieImg {
+    width: 150px;
+    height: auto;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 2em;
+}
+
+#cocktailImg, #songImg {
+    width: 320px;
+    height: auto;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 2em;
+}
+
+.cardStyle, .omdbCard {
+    background-color: rgb(60, 2, 2);
+    color: white;
+    text-align: center;
+}
+
+.foodCard {
+    background-color: rgb(2, 14, 31);
+}
+
+.cocktailCard {
+    background-color: rgb(24, 1, 44);
+}
+
+.musicCard {
+    background-color: rgb(39, 1, 36);
+}
+
+.cardStyle span {
+    
+    color: white;
+    font-size: 21px;
+    padding: 0px;
+}
+
+.card {
+    width: 450px;
+    margin: auto;
+    position: relative;
+    left: 275px;
+    margin-top: 20px;
+}
+
+
+.btn {
+    background-color: rgb(186, 1, 1);
+    color: white;
+}
+
+#movieBtn, #dinnerBtn, #cocktailsBtn, #songBtn{
+    pointer-events: none;
+}
+
+#saveMovieBtn, #saveFoodBtn, #saveCocktailBtn, #saveGameBtn, #saveSongBtn {
+    pointer-events: none;
+}
+
+.moviebg {
+    background-image: url("https://wallpapercave.com/wp/wp5223134.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.foodbg {
+    background-image: url("https://s1.1zoom.me/b5050/76/Cherry_Bowl_Black_background_593220_3840x2160.jpg");
+    /* background:linear-gradient(rgba(1, 1, 1, 0.7), rgba(4, 4, 4, 0.7)), url("https://s1.1zoom.me/b5050/76/Cherry_Bowl_Black_background_593220_3840x2160.jpg"); */
+}
+
+.cocktailbg {
+    background-image: url("https://cdn.vox-cdn.com/thumbor/sMgmFYXLIEghiSnFvA05rDnKudI=/0x0:1000x665/1200x800/filters:focal(420x253:580x413)/cdn.vox-cdn.com/uploads/chorus_image/image/65257292/cocktails.0.jpg");
+    /* background:linear-gradient(rgba(1, 1, 1, 0.7), rgba(4, 4, 4, 0.7)), url("https://www.wallpaperup.com/uploads/wallpapers/2012/09/16/14887/2bdbc8a298909bb6beab4b87eee41cdb-700.jpg");
+ */
+}
+
+.songbg {
+    background-image: url("https://wallpaperaccess.com/full/1162633.jpg");
+}
+
+.combobg {
+    background-image: url("https://m.media-amazon.com/images/I/71UgwaC4DjL._SL1500_.jpg");
 }

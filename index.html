@@ -1,50 +1,61 @@
 <!DOCTYPE html>
 <html lang="en-US">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link rel="stylesheet" href="./assets/css/styles.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <link rel="stylesheet" href="./assets/css/styles.css" />
     <title>Document</title>
-</head>
+  </head>
 
-<body>
-
-
+  <body>
+    <header class="jumbotron" id="firstPage">
+      <div id="jumbo-text">
+        <div>
+          <img src="./assets/images/dnc long logo.png" alt="logo" />
+          <div class="generateBox">
+              <span>Generate your date!</span>
+            <button id="startBtn">START!</button>
+          </div>
+        </div>
+      </div>
+    </header>
 
     <header></header>
 
-    <div id="firstPage">
-        <img src="./assets/images/dnc long logo.png" alt="logo">
-        <button id="startBtn">Start!</button>
-    </div>
+    
+      <div id="movies"></div>
+      <div id="dinner"></div>
+      <div id="cocktails"></div>
+      <div id="game"></div>
+      <div id="song"></div>
+    
 
-    <div id="resultsPage">
-        <div id="movies">
+    <footer>
+        Made by MSM
+    </footer>
 
-        </div>
-        <div id="dinner">
-
-        </div>
-        <div id="cocktails">
-
-        </div>
-        <div id="game">
-
-        </div>
-    </div>
-
-    <footer></footer>
-
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+      integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+      integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+      crossorigin="anonymous"
+    ></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="./assets/js/omdb-api/omdb-script.js"></script>
     <script src="./assets/js/food-api/food-script.js"></script>
     <script src="./assets/js/cocktail-api/cocktail-script.js"></script>
     <script src="./assets/js/spotify-api/spotify-script.js"></script>
+    <script src="./assets/js/game/game.js"></script>
     <script src="./assets/js/script.js"></script>
-</body>
-
+  </body>
 </html>

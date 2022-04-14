@@ -5,13 +5,16 @@ $("#cocktails").append().html(
     <div class="row">
         <div class="col s12 m7">
             <div class="card">
-                <div id="cocktailImg" class="card-image"></div>
-                <div class="card-content">
+                
+                <div class="card-content cardStyle cocktailCard">
+                    <span>GET MY DRINK!</span>
+                    <div id="cocktailImg" class="card-image"></div>
                     <div id="cocktailInfo"></div>
                 </div>
                 <div class="card-action" id="cocktailBtnBox">
                     <a class="waves-effect waves-light btn" id="cocktailsBtn">New Drink</a>
                     <span id="howToMake"></span>
+                    <a class="waves-effect waves-light btn" id="saveCocktailBtn">Confirm choice</a>
                 </div>
             </div>
         </div>
