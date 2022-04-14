@@ -58,21 +58,25 @@ function getFood() {
       <a "target="_blank"href="${response.feed[randomNum].display.source.sourceRecipeUrl}"></a></p>`)
 
             //localStorage Obj;  fix names 
+            //API storage
             var foodRecipeUrl = response.feed[randomNum].display.source.sourceRecipeUrl
             var foodName = response.feed[randomNum].display.displayName
+            var foodImageObj = response.feed[randomNum].display.images[0];
 
             var myLocalFoodStore = {
                 foodURL : foodRecipeUrl,
                 foodMoniker : foodName,
+                foodImage: foodImageObj
             }
 
             var foodLocalStorage = JSON.stringify(myLocalFoodStore)
             localStorage.setItem("FoodStorage", foodLocalStorage);
-
+            
             var useFoodStorage = JSON.parse(localStorage.getItem("FoodStorage"))
-            console.log(useFoodStorage);
-
-
+            console.log(useFoodStorage.foodImage);
+        //     $('#dinnerImage').append().html(`<div>
+        //     <img id="foodImage"  src="${useFoodStorage.foodImage}" width="10px" height="275px"></div>`)
+            
 
         })
         .catch(error => {
@@ -87,6 +91,9 @@ $("#dinnerBtn").on("click", function (event) {
     getFood();
 
 });
+
+
+// bring food storage out 
 
 
 // MATERIALIZE FOR CARDS ---SHADOW effect----
