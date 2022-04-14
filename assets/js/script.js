@@ -3,7 +3,7 @@ function displayResults() {
     $("#resultsPage").css("display", "block")
 }
 $("#startBtn").on("click", function (event) {
-    event.preventDefault();
-
+    event.preventDefault(); 
     displayResults();
 });
+
