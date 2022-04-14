@@ -68,13 +68,19 @@ function displaySong(theData) {
   artistChild.innerHTML = artistName;
   songDiv.appendChild(artistChild);
 
-  //Setting and appending song link button
-  var songLink = theData.link;
-  console.log(songLink);
-  var linkChild = document.createElement("a");
-  linkChild.setAttribute("href", songLink);
-  linkChild.innerHTML = "Listen";
-  songDiv.appendChild(linkChild);
+  //Setting and appending new song button
+  var newSongBtn = document.createElement("a");
+  newSongBtn.classList.add("btn");
+  newSongBtn.setAttribute("id", "songBtn");
+  newSongBtn.innerHTML = "NEW SONG";
+  songDiv.appendChild(newSongBtn);
+
+  //Setting and appending Confirm song button
+  var confirmSongBtn = document.createElement("a");
+  confirmSongBtn.classList.add("btn");
+  confirmSongBtn.setAttribute("id", "saveSongBtn");
+  confirmSongBtn.innerHTML = "CONFIRM CHOICE";
+  songDiv.appendChild(confirmSongBtn);
 
   // var previewChild = document.createElement("div");
   // previewChild.innerHTML = songPreview;

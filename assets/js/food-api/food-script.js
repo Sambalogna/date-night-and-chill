@@ -13,6 +13,7 @@ $("#dinner").append().html(`
             </div>
             <div class="card-action">
                 <a class="waves-effect waves-light btn" id="dinnerBtn" href="#dinner">New Food</a>
+                <a class="waves-effect waves-light btn" id="saveFoodBtn">Confirm choice</a>
             </div>
         </div>
     </div>

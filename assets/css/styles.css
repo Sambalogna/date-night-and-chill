@@ -84,7 +84,7 @@ footer {
 }
 
 
-#movies, #dinner, #cocktails, #game {
+#movies, #dinner, #cocktails, #game, #song {
     display: none;
 }
 
@@ -128,7 +128,7 @@ footer {
     pointer-events: none;
 }
 
-#saveMovieBtn {
+#saveMovieBtn, #saveFoodBtn, #saveCocktailBtn, #saveGameBtn, #saveSongBtn {
     pointer-events: none;
 }
 
