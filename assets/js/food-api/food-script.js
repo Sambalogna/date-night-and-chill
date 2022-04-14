@@ -8,7 +8,7 @@ $("#dinner").append().html(`
             <div id= "dinnerImage" class="card-image">
                 
             </div>
-            <div Id="dinnerInfo" class="card-content cardStyle foodCard">
+            <div Id="dinnerInfo" class="card-content cardStyle foodCard"> 
                 <span>WHAT TO COOK?</span>
             </div>
             <div class="card-action">
@@ -56,6 +56,6 @@ function getFood() {
 $("#dinnerBtn").on("click", function (event) {
     event.preventDefault();
 
-    //getFood();
+    getFood();
 });
 
