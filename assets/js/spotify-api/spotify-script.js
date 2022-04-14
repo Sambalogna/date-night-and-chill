@@ -79,8 +79,8 @@ function displaySong(theData) {
   // previewChild.innerHTML = songPreview;
   // songDiv.appendChild(previewChild);
 
-  var page = document.querySelector("#firstPage");
-  page.appendChild(songDiv);
+  // var page = document.querySelector("#firstPage");
+  // page.appendChild(songDiv);
 }
 
 getRandomSong();
