@@ -139,3 +139,12 @@ footer {
 #saveMovieBtn, #saveFoodBtn, #saveCocktailBtn, #saveGameBtn, #saveSongBtn {
     pointer-events: none;
 }
+
+.moviebg {
+    background-image: url("https://wallpaper.dog/large/20493599.jpg");
+}
+
+.foodbg {
+    /* background-image: url("https://cdn.wallpapersafari.com/0/76/CZP2KI.png"); */
+    background:linear-gradient(rgba(1, 1, 1, 0.7), rgba(4, 4, 4, 0.7)), url("https://cdn.wallpapersafari.com/0/76/CZP2KI.png");
+}

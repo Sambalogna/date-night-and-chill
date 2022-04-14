@@ -5,6 +5,8 @@ $("#startBtn").on("click", function (event) {
 });
 
 function displayMovieBox() {
+    var theBody = document.querySelector("body");
+    theBody.classList.add("moviebg");
     $("#firstPage").css("display", "none")
     $("footer").css("display", "none");
     $("#movies").css("display", "block")
@@ -26,6 +28,8 @@ $("#saveMovieBtn").on("click", function(event) {
 })
 
 function displayFoodBox() {
+    var theBody = document.querySelector("body");
+    theBody.classList.add("foodbg");
     $("#movies").css("display", "none")
     $("#dinner").css("display", "block");
     $("#dinnerBtn").css("pointerEvents", "auto");
