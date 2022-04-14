@@ -51,10 +51,10 @@ function getFood() {
             //append random image
             //MATERIALIZE COOL button btn-floating pulse in <a tag>
             $("#dinnerImage").append().html(`<div>
-      <img id="foodImage"  src="${image1}" width="10px" height="275px"></div>`)
+        <img id="foodImage"  src="${image1}""></div>`)
 
             $("#dinnerInfo").append().html(`<h4>${response.feed[randomNum].display.displayName}</h4>
-      <p><a class=""target="_blank"href="${response.feed[randomNum].display.source.sourceRecipeUrl}"> Click Here For TheRecipe </a>
+      <p><a class=""target="_blank"href="${response.feed[randomNum].display.source.sourceRecipeUrl}"> Click Here For The Recipe </a>
       <a "target="_blank"href="${response.feed[randomNum].display.source.sourceRecipeUrl}"></a></p>`)
 
             //localStorage Obj;  fix names 
@@ -66,18 +66,42 @@ function getFood() {
             var myLocalFoodStore = {
                 foodURL : foodRecipeUrl,
                 foodMoniker : foodName,
-                foodImage: foodImageObj
+                foodImage: foodImageObj,
+
             }
 
             var foodLocalStorage = JSON.stringify(myLocalFoodStore)
             localStorage.setItem("FoodStorage", foodLocalStorage);
-            
             var useFoodStorage = JSON.parse(localStorage.getItem("FoodStorage"))
-            console.log(useFoodStorage.foodImage);
-        //     $('#dinnerImage').append().html(`<div>
-        //     <img id="foodImage"  src="${useFoodStorage.foodImage}" width="10px" height="275px"></div>`)
-            
+            console.log(useFoodStorage);
+            $("#savedDinner").append().html(`
+                <div class="container center">
+                    <div class="col">
+                        <div class="card">
+                            <div id= "savedDinnerImage" class="card-image ">
+                                
+                            </div>
 
+                            <div Id="savedDinnerInfo" class="card-content cardStyle foodCard"> 
+                                <span>WHAT TO COOK?</span>
+                            </div>
+                            <div id= "savedCardAction" class="card-action ">
+                                <a class="waves-effect waves-light btn" id="dinnerBtn" href="#dinner">New Food</a>
+                                <a class="waves-effect waves-light btn" id="saveFoodBtn">Confirm choice</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>`
+                );
+                $("#savedDinnerImage").append().html(`<div>
+                <img id="savedFoodImage"  src="${useFoodStorage.foodImage}""></div>`)
+
+                $("#savedDinnerInfo").append().html(`<h4>${useFoodStorage.foodMoniker}</h4>
+                `)
+                $("#savedCardAction").append().html(` <a class=""target="_blank"href="${useFoodStorage.foodURL}"> Click Here For The Recipe </a>`)
+
+                            
+                
         })
         .catch(error => {
             console.log(error)
@@ -87,13 +111,11 @@ function getFood() {
 
 $("#dinnerBtn").on("click", function (event) {
     event.preventDefault();
-
     getFood();
 
 });
 
 
-// bring food storage out 
 
 
 // MATERIALIZE FOR CARDS ---SHADOW effect----
