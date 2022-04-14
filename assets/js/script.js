@@ -87,3 +87,8 @@ function viewCombo() {
     $("#song").css("display", "none");
     $("#combo").css("display", "block");
 }
+
+
+
+//add combobg div 
+//add local storage 
