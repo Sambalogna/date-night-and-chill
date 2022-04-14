@@ -29,13 +29,15 @@ $("#movies").append().html(
     <div class="row">
         <div class="col s12 m7">
             <div class="card">
-                <div id="movieImg" class="card-image">
-                    <span class="card-title">Card Title</span>
-                </div>
-                <div class="card-content">
+                
+                <div class="card-content cardStyle omdbCard">
+                    <span>GET MY MOVIE!</span>
+                    <div id="movieImg" class="card-image">
+                    </div>
                     <div id="movieInfo">
                     </div>
                 </div>
+                
                 <div class="card-action">
                 <div class="input-field col s12" id="genreSelection">
                     <select name="genres" id="genres">
@@ -49,6 +51,7 @@ $("#movies").append().html(
                     </select>
                 </div>
                 <a class="waves-effect waves-light btn" id="movieBtn">New Movie</a>
+                <a class="waves-effect waves-light btn" id="saveMovieBtn">Confirm choice</a>
                 </div>
             </div>
         </div>

@@ -7,11 +7,13 @@ $("#dinner").append().html(`
             <div id= "dinnerImage" class="card-image ">
                 
             </div>
-            <div Id="dinnerInfo" class="card-content ">
-                
+
+             <div Id="dinnerInfo" class="card-content cardStyle foodCard"> 
+                <span>WHAT TO COOK?</span>
             </div>
             <div class="card-action ">
                 <a class="waves-effect waves-light btn" id="dinnerBtn" href="#dinner">New Food</a>
+                <a class="waves-effect waves-light btn" id="saveFoodBtn">Confirm choice</a>
             </div>
         </div>
     </div>
@@ -61,6 +63,7 @@ $("#dinnerBtn").on("click", function (event) {
     event.preventDefault();
 
    getFood();
+
 });
 
 
