@@ -2,8 +2,8 @@
 
 $("#song").append().html(
   `
-  <div class="row">
-      <div class="col s12 m7">
+  <div class="container center">
+      <div class="col">
           <div class="card">
               
               <div class="card-content cardStyle musicCard">
@@ -22,7 +22,7 @@ $("#song").append().html(
   </div>
   </div>
   `
-  );
+);
 
 
 function getRandomSong() {
@@ -46,12 +46,12 @@ function getRandomSong() {
   )
     .then((response) => response.json())
     .then((data) => {
-        if(!data.preview || !data.album.cover) {
+      if (!data.preview || !data.album.cover) {
         getRandomSong();
-    }
-        else {
-            displaySong(data);    
-        }
+      }
+      else {
+        displaySong(data);
+      }
     })
     .catch((err) => console.error(err));
 }
@@ -59,16 +59,16 @@ function getRandomSong() {
 function displaySong(theData) {
   console.log(theData);
 
-  
-    
-    //Append album cover image
-    $("#songImg").append().html(
-      `<img class="movieImg" width="15%" src="${theData.album.cover}?size=big" />`
+
+
+  //Append album cover image
+  $("#songImg").append().html(
+    `<img class="movieImg" width="15%" src="${theData.album.cover}?size=big" />`
   )
 
-      //Append 30 second song preview
-    $("#audioPlayer").append().html(
-      `<div id="audioBar">
+  //Append 30 second song preview
+  $("#audioPlayer").append().html(
+    `<div id="audioBar">
           <audio src = "${theData.preview}" controls></audio>
       </div>`
   )
@@ -83,8 +83,7 @@ function displaySong(theData) {
 
 
   var songDisplayDiv = document.querySelector("#song");
-  if(songDisplayDiv.style.display == "block")
-  {
+  if (songDisplayDiv.style.display == "block") {
     $("#songBtn").css("pointerEvents", "auto");
   }
 
