@@ -6,7 +6,7 @@ $("#game").append().html(
             <div class="card">
                 <div id="gameImg" class="card-image"></div>
                 <div class="card-content">
-                    <div id="gameInfo"></div>
+                    <div id="gameInfo">Choose an Activity!</div>
                 </div>
                 <div class="card-action" id="gameBtnBox">
                     <a class="waves-effect waves-light btn" id="gamesBtn">New Game</a>
