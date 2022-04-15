@@ -4,17 +4,11 @@ $("#dinner").append().html(`
 <div class="container center">
     <div class="col">
         <div class="card">
-            
-
              <div id="dinnerDiv" class="card-content cardStyle foodCard"> 
                 <span>WHAT TO COOK?</span>
                 <div id= "dinnerImage" class="card-image "></div>
                 <div id="dinnerInfo"></div>
-            </div>
-            
-            
-                
-                
+            </div>   
             <div class="card-action ">
                 <a class="waves-effect waves-light btn" id="dinnerBtn" href="#dinner">New Food</a>
                 <a class="waves-effect waves-light btn" id="saveFoodBtn">Confirm choice</a>
@@ -29,7 +23,7 @@ const helpers = {
     method: 'GET',
     headers: {
         'X-RapidAPI-Host': 'yummly2.p.rapidapi.com',
-        'X-RapidAPI-Key': '1be151836emsh1cafb68ffb3ae6ap1f1fa9jsn67c62ca573f9'
+		'X-RapidAPI-Key': '17cb0461bfmshd727cff5bed1717p1d31a4jsnf2516450dd83'
     }
 };
 var yummlyRapidApiURL = ' https://yummly2.p.rapidapi.com/feeds/list?limit=1000&start=0'
@@ -41,25 +35,20 @@ function getFood() {
         })
         .then(response => {
             //JSON response console log
-            // console.log(response)
-
+             console.log(response)
             response.feed.splice(2, 1);
-
-
-
             //create a random number over the length of feed
             var randomNum = Math.floor(Math.random() * response.feed.length)
-
             //create image from random item in feed
             var image1 = response.feed[randomNum].display.images[0]
             //append random image
             //MATERIALIZE COOL button btn-floating pulse in <a tag>
             $("#dinnerImage").append().html(`<div>
-        <img id="foodImage"  src="${image1}""></div>`)
+            <img id="foodImage"  src="${image1}""></div>`)
 
             $("#dinnerInfo").append().html(`<h4>${response.feed[randomNum].display.displayName}</h4>
-      <p><a class=""target="_blank"href="${response.feed[randomNum].display.source.sourceRecipeUrl}"> Click Here For The Recipe </a>
-      <a "target="_blank"href="${response.feed[randomNum].display.source.sourceRecipeUrl}"></a></p>`)
+            <p><a class=""target="_blank"href="${response.feed[randomNum].display.source.sourceRecipeUrl}"> Click Here For The Recipe </a>
+            <a "target="_blank"href="${response.feed[randomNum].display.source.sourceRecipeUrl}"></a></p>`)
 
             //localStorage Obj;  fix names 
             //API storage
