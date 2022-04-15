@@ -153,6 +153,7 @@ footer {
 #movieBtn,
 #dinnerBtn,
 #cocktailsBtn,
+#gameBtn,
 #songBtn {
     pointer-events: none;
 }
@@ -183,6 +184,11 @@ footer {
     background-image: url("https://cdn.vox-cdn.com/thumbor/sMgmFYXLIEghiSnFvA05rDnKudI=/0x0:1000x665/1200x800/filters:focal(420x253:580x413)/cdn.vox-cdn.com/uploads/chorus_image/image/65257292/cocktails.0.jpg");
     /* background:linear-gradient(rgba(1, 1, 1, 0.7), rgba(4, 4, 4, 0.7)), url("https://www.wallpaperup.com/uploads/wallpapers/2012/09/16/14887/2bdbc8a298909bb6beab4b87eee41cdb-700.jpg");
  */
+    background-position: center center;
+}
+
+.gamebg {
+    background-image: url("https://cdn.cnn.com/cnnnext/dam/assets/200407162252-couples-games-lead.jpg");
     background-position: center center;
 }
 

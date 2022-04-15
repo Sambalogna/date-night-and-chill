@@ -59,13 +59,31 @@ $("#cocktailsBtn").on("click", function () {
 
 $("#saveCocktailBtn").on("click", function (e) {
     e.preventDefault();
+    displayGames();
+});
+
+function displayGames() {
+    var theBody = document.querySelector("body");
+    theBody.classList.add("gamebg");
+    $("#cocktails").css("display", "none");
+    $("#game").css("display", "block");
+    $("#gamesBtn").css("pointerEvents", "auto");
+}
+
+$("#gamesBtn").on("click", function (e) {
+    e.preventDefault();
+    $("#saveGameBtn").css("pointerEvents", "auto");
+});
+
+$("#saveGameBtn").on("click", function (e) {
+    e.preventDefault();
     displaySongs();
 });
 
 function displaySongs() {
     var theBody = document.querySelector("body");
     theBody.classList.add("songbg");
-    $("#cocktails").css("display", "none");
+    $("#game").css("display", "none");
     $("#song").css("display", "block");
     $("#songBtn").css("pointerEvents", "auto");
 }
@@ -90,5 +108,5 @@ function viewCombo() {
 
 
 
-//add combobg div 
+//add combobg div
 //add local storage 
