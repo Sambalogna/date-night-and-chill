@@ -70,10 +70,6 @@ function displayGames() {
     $("#gamesBtn").css("pointerEvents", "auto");
 }
 
-$("#gamesBtn").on("click", function (e) {
-    e.preventDefault();
-    $("#saveGameBtn").css("pointerEvents", "auto");
-});
 
 $("#saveGameBtn").on("click", function (e) {
     e.preventDefault();
