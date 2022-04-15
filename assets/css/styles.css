@@ -134,6 +134,10 @@ footer {
     background-color: rgb(39, 1, 36);
 }
 
+.gameCard {
+    background-color: rgb(0, 31, 25);
+}
+
 .cardStyle span {
 
     color: white;
