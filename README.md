@@ -70,7 +70,7 @@ Please make sure to download all the respective files that is provided along wit
 
 ## <ins> Site Demonstration: </ins>
 
-![Site Demonstration](./assets/site-demonstration/site-demonstration.jpg)
+![Site Demonstration](./assets/site-demonstration/site-demonstration.gif)
 
 ## <ins> Links: </ins>
 
