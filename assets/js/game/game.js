@@ -103,6 +103,9 @@ function randomGame() {
 
   var gameLocalStorage = JSON.stringify(myLocalGameStore);
   localStorage.setItem("GameStorage", gameLocalStorage);
+}
+
+function getGameLocalStorage() {
   var useGameStorage = JSON.parse(localStorage.getItem("GameStorage"));
   console.log(useGameStorage);
   $("#savedGame").append().html(`
@@ -113,7 +116,6 @@ function randomGame() {
 
                 <div class = "card-content cardStyle gameCard">
                 
-                    <span>Choose an Activity!</span>
                     <div id="savedGImage" class="card-image"></div>
 
                     <div id="savedGameInfo"></div>
@@ -135,8 +137,11 @@ function randomGame() {
 
 }
 
+getGameLocalStorage();
+
 $("#gamesBtn").on("click", function (event) {
   event.preventDefault();
-  $("#saveGameBtn").css("pointerEvents", "auto !important");
   randomGame();
+
+  setTimeout(getGameLocalStorage, 4000);
 });
