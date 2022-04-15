@@ -41,7 +41,7 @@ function getFood() {
         })
         .then(response => {
             //JSON response console log
-            console.log(response)
+            // console.log(response)
 
             response.feed.splice(2, 1);
 
@@ -77,7 +77,7 @@ function getFood() {
             var foodLocalStorage = JSON.stringify(myLocalFoodStore)
             localStorage.setItem("FoodStorage", foodLocalStorage);
             var useFoodStorage = JSON.parse(localStorage.getItem("FoodStorage"))
-            console.log(useFoodStorage);
+            // console.log(useFoodStorage);
             $("#savedDinner").append().html(`
                 <div class="container center">
                     

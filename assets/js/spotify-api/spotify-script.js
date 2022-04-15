@@ -92,10 +92,10 @@ function displaySong(theData) {
   //Saving to local storage
   
             var nameOfSong = theData.title;
-            console.log("the title is " + nameOfSong);
+            // console.log("the title is " + nameOfSong);
             var pictureOfSong = theData.album.cover;
             var nameofArtist = theData.artist["name"];
-            console.log("the artist is " + nameofArtist);
+            // console.log("the artist is " + nameofArtist);
 
             var myLocalSongStore = {
                 mySongName : nameOfSong,
@@ -108,7 +108,7 @@ function displaySong(theData) {
             // var foodLocalStorage = JSON.stringify(myLocalFoodStore)
             localStorage.setItem("songStorage", JSON.stringify(myLocalSongStore));
             var useSongStorage = JSON.parse(localStorage.getItem("songStorage"))
-            console.log(useSongStorage);
+            // console.log(useSongStorage);
            
 
             $("#savedSong").append().html(

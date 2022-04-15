@@ -67,14 +67,14 @@ function randomGame() {
     "https://cdn11.bigcommerce.com/s-zs2cp9aoth/images/stencil/2048x2048/products/3892/4410/new_phone_who_dis_3__70353.1586988311.jpg?c=2",
   ];
 
-  console.log(gamesArr);
+//   console.log(gamesArr);
 
   var randomNum = Math.floor(Math.random() * gamesArr.length);
-  console.log(randomNum);
+//   console.log(randomNum);
 
-  console.log(gamesArr);
+//   console.log(gamesArr);
 
-  console.log(gamesArrImg[randomNum]);
+//   console.log(gamesArrImg[randomNum]);
 
   var gameName = gamesArr[randomNum];
   var gameImage = gamesArrImg[randomNum];
@@ -104,7 +104,7 @@ function randomGame() {
   var gameLocalStorage = JSON.stringify(myLocalGameStore);
   localStorage.setItem("GameStorage", gameLocalStorage);
   var useGameStorage = JSON.parse(localStorage.getItem("GameStorage"));
-  console.log(useGameStorage);
+//   console.log(useGameStorage);
   $("#savedGame").append().html(`
         <div class="container center">
             <div class="col">
@@ -112,7 +112,7 @@ function randomGame() {
                 <div class="card">
 
                 <div class = "card-content cardStyle gameCard">
-                
+                    <span>TIME TO PLAY</span>
                     <div id="savedGImage" class="card-image"></div>
 
                     <div id="savedGameInfo"></div>
