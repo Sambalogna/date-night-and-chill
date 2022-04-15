@@ -14,14 +14,14 @@ var drama = ["The Shawshank Redemption", "The Godfather", "Pulp Fiction", "Forre
 var adventure = ["Interstellar", "The Lord of the Rings: The Fellowship of the Ring", "Star Wars", "Spirited Away", "The Lion King", "Indiana Jones and the Raiders of the Lost Ark", "WALL·E", "Princess Mononoke", "Stand by Me", "The Wizard of Oz", "Pirates of the Caribbean: The Curse of the Black Pearl", "Cast Away", "The Iron Giant", "Big Hero 6", "Harry Potter and the Sorcerer's Stone"]
 var all = action.concat(romance, horror, thriller, comedy, action, drama, adventure);
 
-console.log(romance);
-console.log(horror);
-console.log(thriller);
-console.log(comedy);
-console.log(action);
-console.log(drama);
-console.log(adventure);
-console.log(all);
+// console.log(romance);
+// console.log(horror);
+// console.log(thriller);
+// console.log(comedy);
+// console.log(action);
+// console.log(drama);
+// console.log(adventure);
+// console.log(all);
 
 // creates a button and dropdown menu for movie genres
 $("#movies").append().html(
@@ -66,7 +66,7 @@ $("#movieBtn").on("click", function (event) {
 
     // gets selected genre from dropdown options
     var selectedGenre = $("#genres").val();
-    console.log(selectedGenre);
+    // console.log(selectedGenre);
 
     // assigns selected option with the corresponding array
     if (selectedGenre == "romance") {
@@ -94,19 +94,19 @@ $("#movieBtn").on("click", function (event) {
         var selectedArr = all;
     }
     else {
-        console.log("Please pick a genre.")
+        // console.log("Please pick a genre.")
         return;
     }
 
-    console.log(selectedArr);
+    // console.log(selectedArr);
 
     // randomly generates a number based on the selected genre's length
     var randomNum = Math.floor(Math.random() * (selectedArr.length));
-    console.log(randomNum);
+    // console.log(randomNum);
 
     // associates the current array with the value of the random number's index
     selectedArr = selectedArr[randomNum];
-    console.log(selectedArr);
+    // console.log(selectedArr);
 
     // fetches data from the omdb database using the randomly generated array value
     fetch(omdbApi + selectedArr)
@@ -143,7 +143,7 @@ $("#movieBtn").on("click", function (event) {
             localStorage.setItem("MovieStorage", movieLocalStorage);
 
             var useMovieStorage = JSON.parse(localStorage.getItem("MovieStorage"))
-            console.log(useMovieStorage);
+            // console.log(useMovieStorage);
             $("#savedMovies").append().html(`
                 <div class="container center">
                     <div class="col">

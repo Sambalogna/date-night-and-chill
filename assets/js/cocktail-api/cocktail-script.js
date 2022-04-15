@@ -19,7 +19,7 @@ $("#cocktails").append().html(
             </div>
         </div>
     </div>
-    </div>
+    
     `
 );
 
@@ -29,7 +29,7 @@ function randomDrink() {
             return res.json();
         })
         .then(function (data) {
-            console.log("Cocktail Data: ", data.drinks[0]);
+            // console.log("Cocktail Data: ", data.drinks[0]);
             var randomDrink = data.drinks[0];
 
             $("#cocktailInfo").append().html(
@@ -57,24 +57,27 @@ function randomDrink() {
             var drinkLocalStorage = JSON.stringify(myLocalDrinkStore)
             localStorage.setItem("DrinkStorage", drinkLocalStorage);
             var useDrinkStorage = JSON.parse(localStorage.getItem("DrinkStorage"))
-            console.log(useDrinkStorage);
+            // console.log(useDrinkStorage);
             $("#savedCocktails").append().html(`
-                        <div class="container center">
-                            <div class="col">
-                                <div class="card">
-                                    <div id= "savedDrinkImage" class="card-image ">
-                                        
-                                    </div>
-        
-                                    <div Id="savedDrinkInfo" class="card-content cardStyle cocktailCard"> 
-                                        <span>WHAT TO COOK?</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>`
+            <div class="container center">
+            <div class="col">
+                <div class="card">
+                    
+                    <div class="card-content cardStyle cocktailCard">
+                        
+                        <span>GET MY DRINK!</span>
+                        <div id="savedDrinkImage" class="card-image"></div>
+                        
+                        <div id="savedDrinkInfo"></div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        `
             );
-            $("#savedDrinkImage").append().html(`<div>
-                        <img id="savedDrinkImage"  src="${useDrinkStorage.drinkImage}""></div>`)
+            $("#savedDrinkImage").append().html(`
+            <div><img class="savedDrinkImage"  src="${useDrinkStorage.drinkImage}"></div>`)
 
             $("#savedDrinkInfo").append().html(`<h4>${useDrinkStorage.drinkMoniker}</h4><h5>${useDrinkStorage.drinkAlcohol}</h5>
                         `)
