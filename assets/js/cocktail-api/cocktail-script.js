@@ -71,7 +71,7 @@ function getDrinkLocalStorage() {
                                 
                             </div>
 
-                            <div Id="savedDrinkInfo" class="card-content cardStyle foodCard"> 
+                            <div Id="savedDrinkInfo" class="card-content cardStyle cocktailCard"> 
                                 <span>WHAT TO COOK?</span>
                             </div>
                         </div>

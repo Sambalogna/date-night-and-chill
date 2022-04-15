@@ -170,8 +170,40 @@ $("#movieBtn").on("click", function (event) {
             var movieLocalStorage = JSON.stringify(myLocalMovieStore)
             localStorage.setItem("MovieStorage", movieLocalStorage);
 
+            var useMovieStorage = JSON.parse(localStorage.getItem("MovieStorage"))
+            console.log(useMovieStorage);
+            $("#savedMovies").append().html(`
+                <div class="container center">
+                    <div class="col">
+                        
+                    <div class="card">
+                
+                    <div class="card-content cardStyle omdbCard">
+                        <span>GET MY MOVIE!</span>
+                        <div id="savedTitleImage" class="card-image">
+                        </div>
+                        <div id=" savedMovieInfo">
+                     </div>
+                    </div>
+                
+                    
+            </div>
+
+
+                    </div>
+                </div>`
+            );
+            $("#savedTitleImage").append().html(`<div>
+                <img id="savedMovieImage"  src="${useMovieStorage.moviePoster}""></div>`);
+
+            $("#savedMovieInfo").append().html(`
+                <h4>${useMovieStorage.movieName}<sup>${useMovieStorage.movieYear}</sup></h4>
+                `);
+
+
             setTimeout(getMovieLocalStorage, 4000);
         })
 });
+
 
 getMovieLocalStorage();
