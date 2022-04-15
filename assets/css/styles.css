@@ -209,3 +209,19 @@ footer {
     background-position: center center;
     background-repeat: repeat;
 }
+
+#message {
+    display: none;
+}
+
+.messagebg {
+    background-image: url("https://cdn.allthings.how/wp-content/uploads/2018/05/9e81f-messages-in-icloud.jpg");
+    background-position: center center; 
+    background-repeat: no-repeat;
+}
+
+#generateButton {
+    float: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}

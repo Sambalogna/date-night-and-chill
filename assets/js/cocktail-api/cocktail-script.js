@@ -29,7 +29,7 @@ function randomDrink() {
             return res.json();
         })
         .then(function (data) {
-            console.log("Cocktail Data: ", data.drinks[0]);
+            // console.log("Cocktail Data: ", data.drinks[0]);
             var randomDrink = data.drinks[0];
 
             $("#cocktailInfo").append().html(
@@ -57,7 +57,7 @@ function randomDrink() {
             var drinkLocalStorage = JSON.stringify(myLocalDrinkStore)
             localStorage.setItem("DrinkStorage", drinkLocalStorage);
             var useDrinkStorage = JSON.parse(localStorage.getItem("DrinkStorage"))
-            console.log(useDrinkStorage);
+            // console.log(useDrinkStorage);
             $("#savedCocktails").append().html(`
             <div class="container center">
             <div class="col">
