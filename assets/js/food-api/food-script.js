@@ -32,6 +32,38 @@ const helpers = {
         'X-RapidAPI-Key': '1be151836emsh1cafb68ffb3ae6ap1f1fa9jsn67c62ca573f9'
     }
 };
+
+function getFoodLocalStorage() {
+    var useFoodStorage = JSON.parse(localStorage.getItem("FoodStorage"))
+    console.log(useFoodStorage);
+    $("#savedDinner").append().html(`
+                <div class="container center">
+                    
+                <div class="col">
+                <div class="card">
+                    
+                    <div id="savedDinnerDiv" class="card-content cardStyle foodCard"> 
+                    <div id= "savedDinnerImage" class="card-image "></div>
+                    <div id="savedDinnerInfo"></div>
+
+                </div>`+
+        // <div id= "savedCardAction" class="card-action ">
+        //     <a class="waves-effect waves-light btn" id="dinnerBtn" href="#dinner">New Food</a>
+        //     <a class="waves-effect waves-light btn" id="saveFoodBtn">Confirm choice</a>
+        // </div> 
+        `</div>
+                    </div>
+                </div>`
+    );
+    $("#savedDinnerImage").append().html(`<div>
+                <img id="savedFoodImage"  src="${useFoodStorage.foodImage}""></div>`)
+
+    $("#savedDinnerInfo").append().html(`<h4>${useFoodStorage.foodMoniker}</h4>
+                `)
+    // $("#savedCardAction").append().html(` <a class=""target="_blank"href="${useFoodStorage.foodURL}"> Click Here For The Recipe </a>`)
+
+}
+
 var yummlyRapidApiURL = ' https://yummly2.p.rapidapi.com/feeds/list?limit=1000&start=0'
 function getFood() {
     //event.preventDefault();
@@ -68,45 +100,15 @@ function getFood() {
             var foodImageObj = response.feed[randomNum].display.images[0];
 
             var myLocalFoodStore = {
-                foodURL : foodRecipeUrl,
-                foodMoniker : foodName,
+                foodURL: foodRecipeUrl,
+                foodMoniker: foodName,
                 foodImage: foodImageObj,
 
             }
 
             var foodLocalStorage = JSON.stringify(myLocalFoodStore)
             localStorage.setItem("FoodStorage", foodLocalStorage);
-            var useFoodStorage = JSON.parse(localStorage.getItem("FoodStorage"))
-            console.log(useFoodStorage);
-            $("#savedDinner").append().html(`
-                <div class="container center">
-                    
-                <div class="col">
-                <div class="card">
-                    
-                    <div id="savedDinnerDiv" class="card-content cardStyle foodCard"> 
-                    <span>WHAT TO COOK?</span>
-                    <div id= "savedDinnerImage" class="card-image "></div>
-                    <div id="savedDinnerInfo"></div>
 
-                </div>
-                            <div id= "savedCardAction" class="card-action ">
-                                <a class="waves-effect waves-light btn" id="dinnerBtn" href="#dinner">New Food</a>
-                                <a class="waves-effect waves-light btn" id="saveFoodBtn">Confirm choice</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>`
-                );
-                $("#savedDinnerImage").append().html(`<div>
-                <img id="savedFoodImage"  src="${useFoodStorage.foodImage}""></div>`)
-
-                $("#savedDinnerInfo").append().html(`<h4>${useFoodStorage.foodMoniker}</h4>
-                `)
-                $("#savedCardAction").append().html(` <a class=""target="_blank"href="${useFoodStorage.foodURL}"> Click Here For The Recipe </a>`)
-
-                            
-                
         })
         .catch(error => {
             console.log(error)
@@ -114,10 +116,13 @@ function getFood() {
 
 }
 
+getFoodLocalStorage();
+
 $("#dinnerBtn").on("click", function (event) {
     event.preventDefault();
     getFood();
 
+    setTimeout(getFoodLocalStorage, 4000);
 });
 
 
