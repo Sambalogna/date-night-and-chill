@@ -89,9 +89,61 @@ function displaySong(theData) {
 
   // ------------------------------------------------
 
+  //Saving to local storage
+  
+            var nameOfSong = theData.title;
+            console.log("the title is " + nameOfSong);
+            var pictureOfSong = theData.album.cover;
+            var nameofArtist = theData.artist["name"];
+            console.log("the artist is " + nameofArtist);
+
+            var myLocalSongStore = {
+                mySongName : nameOfSong,
+                mySongPicture : pictureOfSong,
+                mySongArtist: nameofArtist,
+
+            }
+
+
+            // var foodLocalStorage = JSON.stringify(myLocalFoodStore)
+            localStorage.setItem("songStorage", JSON.stringify(myLocalSongStore));
+            var useSongStorage = JSON.parse(localStorage.getItem("songStorage"))
+            console.log(useSongStorage);
+           
+
+            $("#savedSong").append().html(
+              `
+              <div class="container center">
+                  <div class="col">
+                      <div class="card">
+                          
+                          <div class="card-content cardStyle musicCard">
+                              <span>THE PERFECT SONG!</span>
+                              <div id="savedSongImg" class="card-image"></div>
+                              
+                              <div id="savedSongName"></div>
+                              <div id = "savedSongArtist"></div>
+                          </div>
+                          
+                      </div>
+                  </div>
+              </div>
+              </div>
+              `
+            );
+
+
+                $("#savedSongImg").append().html(
+                  `<img class="movieImg" width="15%" src="${theData.album.cover}?size=big" />`
+                )
+
+                $("#savedSongName").append().html(`<h4>${useSongStorage.mySongName}</h4>
+                `)
+                $("#savedSongArtist").append().html(`<h5>${useSongStorage.mySongArtist}</h5>
+                `)
+                
+
+
 }
-
-
-//Adding functionality to New song button
 
 
