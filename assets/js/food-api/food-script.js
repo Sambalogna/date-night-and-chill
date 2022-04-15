@@ -68,8 +68,8 @@ function getFood() {
             var foodImageObj = response.feed[randomNum].display.images[0];
 
             var myLocalFoodStore = {
-                foodURL : foodRecipeUrl,
-                foodMoniker : foodName,
+                foodURL: foodRecipeUrl,
+                foodMoniker: foodName,
                 foodImage: foodImageObj,
 
             }
@@ -85,28 +85,27 @@ function getFood() {
                 <div class="card">
                     
                     <div id="savedDinnerDiv" class="card-content cardStyle foodCard"> 
-                    <span>WHAT TO COOK?</span>
                     <div id= "savedDinnerImage" class="card-image "></div>
                     <div id="savedDinnerInfo"></div>
 
-                </div>
-                            <div id= "savedCardAction" class="card-action ">
-                                <a class="waves-effect waves-light btn" id="dinnerBtn" href="#dinner">New Food</a>
-                                <a class="waves-effect waves-light btn" id="saveFoodBtn">Confirm choice</a>
-                            </div>
-                        </div>
+                </div>`+
+                // <div id= "savedCardAction" class="card-action ">
+                //     <a class="waves-effect waves-light btn" id="dinnerBtn" href="#dinner">New Food</a>
+                //     <a class="waves-effect waves-light btn" id="saveFoodBtn">Confirm choice</a>
+                // </div> 
+                `</div>
                     </div>
                 </div>`
-                );
-                $("#savedDinnerImage").append().html(`<div>
+            );
+            $("#savedDinnerImage").append().html(`<div>
                 <img id="savedFoodImage"  src="${useFoodStorage.foodImage}""></div>`)
 
-                $("#savedDinnerInfo").append().html(`<h4>${useFoodStorage.foodMoniker}</h4>
+            $("#savedDinnerInfo").append().html(`<h4>${useFoodStorage.foodMoniker}</h4>
                 `)
-                $("#savedCardAction").append().html(` <a class=""target="_blank"href="${useFoodStorage.foodURL}"> Click Here For The Recipe </a>`)
+            // $("#savedCardAction").append().html(` <a class=""target="_blank"href="${useFoodStorage.foodURL}"> Click Here For The Recipe </a>`)
 
-                            
-                
+
+
         })
         .catch(error => {
             console.log(error)
