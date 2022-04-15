@@ -56,42 +56,34 @@ function randomDrink() {
             }
             var drinkLocalStorage = JSON.stringify(myLocalDrinkStore)
             localStorage.setItem("DrinkStorage", drinkLocalStorage);
+            var useDrinkStorage = JSON.parse(localStorage.getItem("DrinkStorage"))
+            console.log(useDrinkStorage);
+            $("#savedCocktails").append().html(`
+                        <div class="container center">
+                            <div class="col">
+                                <div class="card">
+                                    <div id= "savedDrinkImage" class="card-image ">
+                                        
+                                    </div>
+        
+                                    <div Id="savedDrinkInfo" class="card-content cardStyle cocktailCard"> 
+                                        <span>WHAT TO COOK?</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>`
+            );
+            $("#savedDrinkImage").append().html(`<div>
+                        <img id="savedDrinkImage"  src="${useDrinkStorage.drinkImage}""></div>`)
 
+            $("#savedDrinkInfo").append().html(`<h4>${useDrinkStorage.drinkMoniker}</h4><h5>${useDrinkStorage.drinkAlcohol}</h5>
+                        `)
         });
 };
-
-function getDrinkLocalStorage() {
-    var useDrinkStorage = JSON.parse(localStorage.getItem("DrinkStorage"))
-    console.log(useDrinkStorage);
-    $("#savedCocktails").append().html(`
-                <div class="container center">
-                    <div class="col">
-                        <div class="card">
-                            <div id= "savedDrinkImage" class="card-image ">
-                                
-                            </div>
-
-                            <div Id="savedDrinkInfo" class="card-content cardStyle cocktailCard"> 
-                                <span>WHAT TO COOK?</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>`
-    );
-    $("#savedDrinkImage").append().html(`<div>
-                <img id="savedDrinkImage"  src="${useDrinkStorage.drinkImage}""></div>`)
-
-    $("#savedDrinkInfo").append().html(`<h4>${useDrinkStorage.drinkMoniker}</h4><h5>${useDrinkStorage.drinkAlcohol}</h5>
-                `)
-}
-
-getDrinkLocalStorage();
 
 // adds click listener to execute movie generation
 $("#cocktailsBtn").on("click", function (event) {
     event.preventDefault();
     randomDrink();
-
-    setTimeout(getDrinkLocalStorage, 4000);
 });
 
