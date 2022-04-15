@@ -153,7 +153,7 @@ $("#movieBtn").on("click", function (event) {
                         <span>GET MY MOVIE!</span>
                         <div id="savedTitleImage" class="card-image">
                         </div>
-                        <div id="savedMovieInfo">
+                        <div id=" savedMovieInfo">
                      </div>
                     </div>
                 
