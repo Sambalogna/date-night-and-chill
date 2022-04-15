@@ -89,66 +89,61 @@ function displaySong(theData) {
 
   // ------------------------------------------------
 
-  // var songDiv = document.createElement("div");
-  // songDiv.classList.add("musicSection");
-  // songDiv.classList.add("cardStyle")
+  //Saving to local storage
+  
+            var nameOfSong = theData.title;
+            console.log("the title is " + nameOfSong);
+            var pictureOfSong = theData.album.cover;
+            var nameofArtist = theData.artist["name"];
+            console.log("the artist is " + nameofArtist);
 
-  // //Setting and appending song image
-  // var coverImage = theData.album.cover;
-  // var largeImage = `${coverImage}?size=big`;
-  // console.log(largeImage);
-  // var imgChild = document.createElement("img");
-  // imgChild.setAttribute("src", largeImage);
-  // songDiv.appendChild(imgChild);
+            var myLocalSongStore = {
+                mySongName : nameOfSong,
+                mySongPicture : pictureOfSong,
+                mySongArtist: nameofArtist,
 
-  // var lineBreak = document.createElement("br");
-  // songDiv.appendChild(lineBreak);
+            }
 
-  //Setting and appending audio preview
-  // var songPreview = theData.preview;
-  // var audioPlayer = document.createElement("audio");
-  // audioPlayer.setAttribute("src", songPreview);
-  // audioPlayer.controls = true;
-  // songDiv.appendChild(audioPlayer);
 
-  // //Setting and appending song title
-  // var songTitle = theData.title;
-  // console.log(songTitle);
-  // var titleChild = document.createElement("h6");
-  // titleChild.innerHTML = songTitle;
-  // songDiv.appendChild(titleChild);
+            // var foodLocalStorage = JSON.stringify(myLocalFoodStore)
+            localStorage.setItem("songStorage", JSON.stringify(myLocalSongStore));
+            var useSongStorage = JSON.parse(localStorage.getItem("songStorage"))
+            console.log(useSongStorage);
+           
 
-  // //Setting and appending artist name
-  // var artistName = theData.artist["name"];
-  // console.log(artistName);
-  // var artistChild = document.createElement("p");
-  // artistChild.innerHTML = artistName;
-  // songDiv.appendChild(artistChild);
+            $("#savedSong").append().html(
+              `
+              <div class="container center">
+                  <div class="col">
+                      <div class="card">
+                          
+                          <div class="card-content cardStyle musicCard">
+                              <span>THE PERFECT SONG!</span>
+                              <div id="savedSongImg" class="card-image"></div>
+                              
+                              <div id="savedSongName"></div>
+                              <div id = "savedSongArtist"></div>
+                          </div>
+                          
+                      </div>
+                  </div>
+              </div>
+              </div>
+              `
+            );
 
-  // //Setting and appending new song button
-  // var newSongBtn = document.createElement("a");
-  // newSongBtn.classList.add("btn");
-  // newSongBtn.setAttribute("id", "songBtn");
-  // newSongBtn.innerHTML = "NEW SONG";
-  // songDiv.appendChild(newSongBtn);
 
-  // //Setting and appending Confirm song button
-  // var confirmSongBtn = document.createElement("a");
-  // confirmSongBtn.classList.add("btn");
-  // confirmSongBtn.setAttribute("id", "saveSongBtn");
-  // confirmSongBtn.innerHTML = "CONFIRM CHOICE";
-  // songDiv.appendChild(confirmSongBtn);
+                $("#savedSongImg").append().html(
+                  `<img class="movieImg" width="15%" src="${theData.album.cover}?size=big" />`
+                )
 
-  // // var previewChild = document.createElement("div");
-  // // previewChild.innerHTML = songPreview;
-  // // songDiv.appendChild(previewChild);
+                $("#savedSongName").append().html(`<h4>${useSongStorage.mySongName}</h4>
+                `)
+                $("#savedSongArtist").append().html(`<h5>${useSongStorage.mySongArtist}</h5>
+                `)
+                
 
-  // var page = document.querySelector("#song");
-  // page.appendChild(songDiv);
 
 }
-
-
-//Adding functionality to New song button
 
 

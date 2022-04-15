@@ -41,7 +41,7 @@ body {
     text-align: center;
     position: relative;
     bottom: 25px;
-    opacity: 0.5;
+    opacity: 0.65;
     transition: opacity 1.2s ease;
 }
 
@@ -89,7 +89,8 @@ footer {
 #dinner,
 #cocktails,
 #game,
-#song {
+#song,
+#combo {
     display: none;
 }
 
@@ -103,7 +104,9 @@ footer {
 }
 
 #cocktailImg,
-#songImg {
+#songImg,
+#foodImage,
+#savedFoodImage {
     width: 60%;
     height: auto;
     margin-right: auto;
