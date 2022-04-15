@@ -170,7 +170,7 @@ $("#movieBtn").on("click", function (event) {
             var movieLocalStorage = JSON.stringify(myLocalMovieStore)
             localStorage.setItem("MovieStorage", movieLocalStorage);
 
-            setTimeout(getMovieLocalStorage, 1000);
+            setTimeout(getMovieLocalStorage, 4000);
         })
 });
 
