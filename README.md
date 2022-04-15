@@ -2,16 +2,17 @@
 
 ## <ins> Table of Contents: </ins>
 
-- [Description of the Task](#description-of-the-task)
+- [Description of the Task](#-description-of-the-task-)
 - [User Story](#user-story)
-- [Description of the Page](#description-of-the-page)
-- [Remarks](#remarks)
-- [Learning Points](#learning-points)
-- [Technologies and Programs Used](#technologies-and-programs-used)
-- [Installation](#installation)
-- [Site Demonstration](#site-demonstration)
-- [Links](#links)
-- [Credits](#credits)
+- [Description of the Page](#-description-of-the-page-)
+- [Remarks](#-remarks-)
+- [Learning Points](#-learning-points-)
+- [Technologies and Programs Used](#-technologies-and-programs-used-)
+- [Installation](#-installation-)
+- [Site Demonstration](#-site-demonstration-)
+- [Links](#-links-)
+- [Credits](#-credits-)
+- [License](#-license-)
 
 
 ## <ins> Description of the Task: </ins>
@@ -83,3 +84,7 @@ Please make sure to download all the respective files that is provided along wit
 - [Maung Htike](https://github.com/Sfzmango)
 - [Samuel Mandel](https://github.com/Sambalogna)
 - [Mohammad Razvi](https://github.com/MoeCancode)
+
+## <ins> License: </ins>
+
+MIT
