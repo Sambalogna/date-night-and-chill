@@ -60,7 +60,7 @@ function randomDrink() {
         });
 };
 
-function getGameLocalStorage() {
+function getDrinkLocalStorage() {
     var useDrinkStorage = JSON.parse(localStorage.getItem("DrinkStorage"))
     console.log(useDrinkStorage);
     $("#savedCocktails").append().html(`
@@ -85,13 +85,13 @@ function getGameLocalStorage() {
                 `)
 }
 
-getGameLocalStorage();
+getDrinkLocalStorage();
 
 // adds click listener to execute movie generation
 $("#cocktailsBtn").on("click", function (event) {
     event.preventDefault();
     randomDrink();
 
-    setTimeout(getGameLocalStorage, 1000);
+    setTimeout(getDrinkLocalStorage, 1000);
 });
 
