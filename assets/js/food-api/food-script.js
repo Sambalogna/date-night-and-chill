@@ -1,17 +1,17 @@
-//console.log('test')
-//console.log('test2')
-
+//ads base card for food api input
+//MATERIALIZE: card-panel hoverable for parent div of wave button: class = "card-panel hoverable"
 $("#dinner").append().html(`
-<div class="row">
-    <div class="col s12 m7">
+<div class="container center">
+    <div class="col">
         <div class="card">
-            <div id= "dinnerImage" class="card-image">
+            <div id= "dinnerImage" class="card-image ">
                 
             </div>
-            <div Id="dinnerInfo" class="card-content cardStyle foodCard"> 
+
+             <div Id="dinnerInfo" class="card-content cardStyle foodCard"> 
                 <span>WHAT TO COOK?</span>
             </div>
-            <div class="card-action">
+            <div class="card-action ">
                 <a class="waves-effect waves-light btn" id="dinnerBtn" href="#dinner">New Food</a>
                 <a class="waves-effect waves-light btn" id="saveFoodBtn">Confirm choice</a>
             </div>
@@ -20,42 +20,109 @@ $("#dinner").append().html(`
 </div>`
 );
 
-
+//rapid api hosts yummly's api;
 const helpers = {
-	method: 'GET',
-	headers: {
-		'X-RapidAPI-Host': 'yummly2.p.rapidapi.com',
-		'X-RapidAPI-Key': '1be151836emsh1cafb68ffb3ae6ap1f1fa9jsn67c62ca573f9'
-	}
+    method: 'GET',
+    headers: {
+        'X-RapidAPI-Host': 'yummly2.p.rapidapi.com',
+        'X-RapidAPI-Key': '1be151836emsh1cafb68ffb3ae6ap1f1fa9jsn67c62ca573f9'
+    }
 };
-
-var yummlyRapidApiURL =' https://yummly2.p.rapidapi.com/feeds/list?limit=1000&start=0'
-
+var yummlyRapidApiURL = ' https://yummly2.p.rapidapi.com/feeds/list?limit=1000&start=0'
 function getFood() {
     //event.preventDefault();
     fetch(yummlyRapidApiURL, helpers)
-    .then(response => {
-      return response.json();
-    })
-    .then(response => {
-      console.log(response)
-      var randomNum = Math.floor(Math.random()*22)
-      console.log(response.feed[randomNum].display.displayName)
-      var image1 = response.feed[randomNum].display.images[0]
-      $("#dinnerImage").append().html(`<img height="450px" width="200px" src="${image1}">
-      <span class="card-title">${response.feed[randomNum].display.displayName}</span>
-        `)
-      $("#dinnerInfo").append().html(`<p>${response.feed[randomNum].display.displayName}</p>`)
-      
-    })
-    .catch(error => {
-        console.log(error)
-    })
+        .then(response => {
+            return response.json();
+        })
+        .then(response => {
+            //JSON response console log
+            console.log(response)
+
+            response.feed.splice(2, 1);
+
+
+
+            //create a random number over the length of feed
+            var randomNum = Math.floor(Math.random() * response.feed.length)
+
+            //create image from random item in feed
+            var image1 = response.feed[randomNum].display.images[0]
+            //append random image
+            //MATERIALIZE COOL button btn-floating pulse in <a tag>
+            $("#dinnerImage").append().html(`<div>
+        <img id="foodImage"  src="${image1}""></div>`)
+
+            $("#dinnerInfo").append().html(`<h4>${response.feed[randomNum].display.displayName}</h4>
+      <p><a class=""target="_blank"href="${response.feed[randomNum].display.source.sourceRecipeUrl}"> Click Here For The Recipe </a>
+      <a "target="_blank"href="${response.feed[randomNum].display.source.sourceRecipeUrl}"></a></p>`)
+
+            //localStorage Obj;  fix names 
+            //API storage
+            var foodRecipeUrl = response.feed[randomNum].display.source.sourceRecipeUrl
+            var foodName = response.feed[randomNum].display.displayName
+            var foodImageObj = response.feed[randomNum].display.images[0];
+
+            var myLocalFoodStore = {
+                foodURL : foodRecipeUrl,
+                foodMoniker : foodName,
+                foodImage: foodImageObj,
+
+            }
+
+            var foodLocalStorage = JSON.stringify(myLocalFoodStore)
+            localStorage.setItem("FoodStorage", foodLocalStorage);
+            var useFoodStorage = JSON.parse(localStorage.getItem("FoodStorage"))
+            console.log(useFoodStorage);
+            $("#savedDinner").append().html(`
+                <div class="container center">
+                    <div class="col">
+                        <div class="card">
+                            <div id= "savedDinnerImage" class="card-image ">
+                                
+                            </div>
+
+                            <div Id="savedDinnerInfo" class="card-content cardStyle foodCard"> 
+                                <span>WHAT TO COOK?</span>
+                            </div>
+                            <div id= "savedCardAction" class="card-action ">
+                                <a class="waves-effect waves-light btn" id="dinnerBtn" href="#dinner">New Food</a>
+                                <a class="waves-effect waves-light btn" id="saveFoodBtn">Confirm choice</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>`
+                );
+                $("#savedDinnerImage").append().html(`<div>
+                <img id="savedFoodImage"  src="${useFoodStorage.foodImage}""></div>`)
+
+                $("#savedDinnerInfo").append().html(`<h4>${useFoodStorage.foodMoniker}</h4>
+                `)
+                $("#savedCardAction").append().html(` <a class=""target="_blank"href="${useFoodStorage.foodURL}"> Click Here For The Recipe </a>`)
+
+                            
+                
+        })
+        .catch(error => {
+            console.log(error)
+        })
+
 }
 
 $("#dinnerBtn").on("click", function (event) {
     event.preventDefault();
-
     getFood();
+
 });
 
+
+
+
+// MATERIALIZE FOR CARDS ---SHADOW effect----
+// <div class="col s12 m2">
+// <p class="z-depth-5">z-depth-5</p>
+// </div>
+//for our names and company
+//https://materializecss.com/footer.html
+//<i class="material-icons">!</i> for inside <a> tags
+    ///class="btn-floating pulse" for ^
