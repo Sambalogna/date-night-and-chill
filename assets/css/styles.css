@@ -119,6 +119,7 @@ footer {
     background-color: rgb(60, 2, 2);
     color: white;
     text-align: center;
+    margin-bottom: 20px;
 }
 
 .foodCard {
@@ -200,6 +201,7 @@ footer {
 }
 
 .combobg {
-    background-image: url("https://m.media-amazon.com/images/I/71UgwaC4DjL._SL1500_.jpg");
+    background-image: url("https://wallpaperaccess.com/full/2413558.jpg");
     background-position: center center;
+    background-repeat: repeat;
 }

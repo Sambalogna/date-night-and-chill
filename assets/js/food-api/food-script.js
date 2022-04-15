@@ -4,13 +4,17 @@ $("#dinner").append().html(`
 <div class="container center">
     <div class="col">
         <div class="card">
-            <div id= "dinnerImage" class="card-image ">
-                
-            </div>
+            
 
-             <div Id="dinnerInfo" class="card-content cardStyle foodCard"> 
+             <div id="dinnerDiv" class="card-content cardStyle foodCard"> 
                 <span>WHAT TO COOK?</span>
+                <div id= "dinnerImage" class="card-image "></div>
+                <div id="dinnerInfo"></div>
             </div>
+            
+            
+                
+                
             <div class="card-action ">
                 <a class="waves-effect waves-light btn" id="dinnerBtn" href="#dinner">New Food</a>
                 <a class="waves-effect waves-light btn" id="saveFoodBtn">Confirm choice</a>
@@ -76,15 +80,16 @@ function getFood() {
             console.log(useFoodStorage);
             $("#savedDinner").append().html(`
                 <div class="container center">
-                    <div class="col">
-                        <div class="card">
-                            <div id= "savedDinnerImage" class="card-image ">
-                                
-                            </div>
+                    
+                <div class="col">
+                <div class="card">
+                    
+                    <div id="savedDinnerDiv" class="card-content cardStyle foodCard"> 
+                    <span>WHAT TO COOK?</span>
+                    <div id= "savedDinnerImage" class="card-image "></div>
+                    <div id="savedDinnerInfo"></div>
 
-                            <div Id="savedDinnerInfo" class="card-content cardStyle foodCard"> 
-                                <span>WHAT TO COOK?</span>
-                            </div>
+                </div>
                             <div id= "savedCardAction" class="card-action ">
                                 <a class="waves-effect waves-light btn" id="dinnerBtn" href="#dinner">New Food</a>
                                 <a class="waves-effect waves-light btn" id="saveFoodBtn">Confirm choice</a>
