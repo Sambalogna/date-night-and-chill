@@ -143,5 +143,5 @@ $("#gamesBtn").on("click", function (event) {
   event.preventDefault();
   randomGame();
 
-  setTimeout(getGameLocalStorage, 1000);
+  setTimeout(getGameLocalStorage, 4000);
 });

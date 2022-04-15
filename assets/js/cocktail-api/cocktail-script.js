@@ -92,6 +92,6 @@ $("#cocktailsBtn").on("click", function (event) {
     event.preventDefault();
     randomDrink();
 
-    setTimeout(getDrinkLocalStorage, 1000);
+    setTimeout(getDrinkLocalStorage, 4000);
 });
 
