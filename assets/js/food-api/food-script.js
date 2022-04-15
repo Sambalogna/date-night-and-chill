@@ -68,8 +68,8 @@ function getFood() {
             var foodImageObj = response.feed[randomNum].display.images[0];
 
             var myLocalFoodStore = {
-                foodURL : foodRecipeUrl,
-                foodMoniker : foodName,
+                foodURL: foodRecipeUrl,
+                foodMoniker: foodName,
                 foodImage: foodImageObj,
 
             }
@@ -97,16 +97,16 @@ function getFood() {
                         </div>
                     </div>
                 </div>`
-                );
-                $("#savedDinnerImage").append().html(`<div>
+            );
+            $("#savedDinnerImage").append().html(`<div>
                 <img id="savedFoodImage"  src="${useFoodStorage.foodImage}""></div>`)
 
-                $("#savedDinnerInfo").append().html(`<h4>${useFoodStorage.foodMoniker}</h4>
+            $("#savedDinnerInfo").append().html(`<h4>${useFoodStorage.foodMoniker}</h4>
                 `)
-                $("#savedCardAction").append().html(` <a class=""target="_blank"href="${useFoodStorage.foodURL}"> Click Here For The Recipe </a>`)
+            $("#savedCardAction").append().html(` <a class=""target="_blank"href="${useFoodStorage.foodURL}"> Click Here For The Recipe </a>`)
 
-                            
-                
+
+
         })
         .catch(error => {
             console.log(error)
@@ -130,4 +130,7 @@ $("#dinnerBtn").on("click", function (event) {
 //for our names and company
 //https://materializecss.com/footer.html
 //<i class="material-icons">!</i> for inside <a> tags
-    ///class="btn-floating pulse" for ^
+///class="btn-floating pulse" for ^
+
+
+;
