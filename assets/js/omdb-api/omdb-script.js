@@ -146,19 +146,21 @@ $("#movieBtn").on("click", function (event) {
             $("#savedMovies").append().html(`
                 <div class="container center">
                     <div class="col">
-                        <div class="card">
-                            <div id= "savedTitleImage" class="card-image ">
-                                
-                            </div>
-
-                            <div Id="savedMovieInfo" class="card-content cardStyle foodCard"> 
-                                <span>WHAT TO COOK?</span>
-                            </div>
-                            <div id= "savedMovieCardAction" class="card-action ">
-                                <a class="waves-effect waves-light btn" id="dinnerBtn" href="#dinner">New Food</a>
-                                <a class="waves-effect waves-light btn" id="saveFoodBtn">Confirm choice</a>
-                            </div>
+                        
+                    <div class="card">
+                
+                    <div class="card-content cardStyle omdbCard">
+                        <span>GET MY MOVIE!</span>
+                        <div id="savedTitleImage" class="card-image">
                         </div>
+                        <div id="savedMovieInfo">
+                     </div>
+                    </div>
+                
+                    
+            </div>
+
+
                     </div>
                 </div>`
             );
@@ -167,7 +169,6 @@ $("#movieBtn").on("click", function (event) {
 
             $("#savedMovieInfo").append().html(`
                 <h4>${useMovieStorage.movieName}<sup>${useMovieStorage.movieYear}</sup></h4>
-                <h5>${useMovieStorage.moviePlot}</h5>
                 `);
 
         });
