@@ -103,9 +103,6 @@ function randomGame() {
 
   var gameLocalStorage = JSON.stringify(myLocalGameStore);
   localStorage.setItem("GameStorage", gameLocalStorage);
-}
-
-function getGameLocalStorage() {
   var useGameStorage = JSON.parse(localStorage.getItem("GameStorage"));
   console.log(useGameStorage);
   $("#savedGame").append().html(`
@@ -134,14 +131,10 @@ function getGameLocalStorage() {
 
   $("#savedGameInfo").append().html(`<h4>${useGameStorage.gameNameObj}</h4>
         `);
-
 }
 
-getGameLocalStorage();
 
 $("#gamesBtn").on("click", function (event) {
   event.preventDefault();
   randomGame();
-
-  setTimeout(getGameLocalStorage, 4000);
 });
