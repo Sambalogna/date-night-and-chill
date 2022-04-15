@@ -45,21 +45,25 @@ function randomDrink() {
             )
             //localStorage Obj;  fix names 
             //API storage
-            var howToUrl = `"https://www.youtube.com/results?search_query=how+to+make+${randomDrink.strDrink}+drink"`
+
             var drinkName = randomDrink.strDrink
             var drinkAlcoholic = randomDrink.strAlcoholic;
             var drinkImg = randomDrink.strDrinkThumb
             var myLocalDrinkStore = {
-                howURL : howToUrl,
-                drinkMoniker : drinkName,
+                drinkMoniker: drinkName,
                 drinkImage: drinkImg,
-                drinkAlcohol: drinkAlcoholic 
+                drinkAlcohol: drinkAlcoholic
             }
             var drinkLocalStorage = JSON.stringify(myLocalDrinkStore)
             localStorage.setItem("DrinkStorage", drinkLocalStorage);
-            var useDrinkStorage = JSON.parse(localStorage.getItem("DrinkStorage"))
-            console.log(useDrinkStorage);
-            $("#savedCocktails").append().html(`
+
+        });
+};
+
+function getDrinkLocalStorage() {
+    var useDrinkStorage = JSON.parse(localStorage.getItem("DrinkStorage"))
+    console.log(useDrinkStorage);
+    $("#savedCocktails").append().html(`
                 <div class="container center">
                     <div class="col">
                         <div class="card">
@@ -70,29 +74,24 @@ function randomDrink() {
                             <div Id="savedDrinkInfo" class="card-content cardStyle foodCard"> 
                                 <span>WHAT TO COOK?</span>
                             </div>
-                            <div id= "savedCardActionDrink" class="card-action ">
-                                <a class="waves-effect waves-light btn" id="cocktailsBtn" href="#dinner">New Food</a>
-                                <a class="waves-effect waves-light btn" id="saveCocktailBtn">Confirm choice</a>
-                            </div>
                         </div>
                     </div>
                 </div>`
-                );
-                $("#savedDrinkImage").append().html(`<div>
+    );
+    $("#savedDrinkImage").append().html(`<div>
                 <img id="savedDrinkImage"  src="${useDrinkStorage.drinkImage}""></div>`)
 
-                $("#savedDrinkInfo").append().html(`<h4>${useDrinkStorage.drinkMoniker}</h4><h5>${useDrinkStorage.drinkAlcohol}</h5>
+    $("#savedDrinkInfo").append().html(`<h4>${useDrinkStorage.drinkMoniker}</h4><h5>${useDrinkStorage.drinkAlcohol}</h5>
                 `)
-                $("#savedCardActionDrink").append().html(` <a class=""target="_blank"href="${useDrinkStorage.howURL}"> Click Here For The Recipe </a>`)
+}
 
-                            
-        });
-};
+getDrinkLocalStorage();
 
 // adds click listener to execute movie generation
 $("#cocktailsBtn").on("click", function (event) {
     event.preventDefault();
-
     randomDrink();
+
+    setTimeout(getDrinkLocalStorage, 4000);
 });
 

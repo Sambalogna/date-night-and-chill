@@ -60,6 +60,34 @@ $("#movies").append().html(
 `
 );
 
+function getMovieLocalStorage() {
+    var useMovieStorage = JSON.parse(localStorage.getItem("MovieStorage"))
+    console.log(useMovieStorage);
+    $("#savedMovies").append().html(`
+            <div class="container center">
+                <div class="col">
+                    <div class="card">
+                        <div id= "savedTitleImage" class="card-image ">
+                            
+                        </div>
+
+                        <div Id="savedMovieInfo" class="card-content cardStyle foodCard"> 
+                            <span>WHAT TO COOK?</span>
+                        </div>
+                    </div>
+                </div>
+            </div>`
+    );
+    $("#savedTitleImage").append().html(`<div>
+            <img id="savedMovieImage"  src="${useMovieStorage.moviePoster}""></div>`);
+
+    $("#savedMovieInfo").append().html(`
+            <h4>${useMovieStorage.movieName}<sup>${useMovieStorage.movieYear}</sup></h4>
+            <h5>${useMovieStorage.moviePlot}</h5>
+            `);
+};
+
+
 // adds click listener to execute movie generation
 $("#movieBtn").on("click", function (event) {
     event.preventDefault();
@@ -141,6 +169,7 @@ $("#movieBtn").on("click", function (event) {
 
             var movieLocalStorage = JSON.stringify(myLocalMovieStore)
             localStorage.setItem("MovieStorage", movieLocalStorage);
+
             var useMovieStorage = JSON.parse(localStorage.getItem("MovieStorage"))
             console.log(useMovieStorage);
             $("#savedMovies").append().html(`
@@ -171,5 +200,10 @@ $("#movieBtn").on("click", function (event) {
                 <h4>${useMovieStorage.movieName}<sup>${useMovieStorage.movieYear}</sup></h4>
                 `);
 
-        });
+
+            setTimeout(getMovieLocalStorage, 4000);
+        })
 });
+
+
+getMovieLocalStorage();
