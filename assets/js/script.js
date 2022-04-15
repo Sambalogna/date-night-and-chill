@@ -98,7 +98,7 @@ $("#saveSongBtn").on("click", function (e) {
 })
 
 function viewCombo() {
-    console.log("viewcombo called");
+    // console.log("viewcombo called");
     var theBody = document.querySelector("body");
     theBody.classList.add("combobg");
     $("#song").css("display", "none");
@@ -108,8 +108,9 @@ function viewCombo() {
     
 }
 
+//DYnamicaaly make generate message button
 function makeButton() {
-    console.log("Make button was called");
+    // console.log("Make button was called");
     var generateMessage = document.createElement("button");
     generateMessage.innerHTML = "GENERATE MESSAGE";
     generateMessage.setAttribute("id", "generateButton");
@@ -138,8 +139,20 @@ function makeTextMessage() {
     var gameVariable = JSON.parse(localStorage.getItem("GameStorage")).gameNameObj;
     var songVariable = JSON.parse(localStorage.getItem("songStorage")).mySongName;
 
-    var textString = `Hey, I have the perfect idea for our date! \n We're going to watch the movie ${movieVariable}.\n For dinner, I'll make us some ${foodVariable} \n while you prepare 2 glasses of ${drinkVariable}. \n After Dinner we can play ${gameVariable} and listen to ${songVariable}!`;
+    var textString = `\n Hey, I have the perfect idea for our date! \n We're going to watch the movie ${movieVariable}.\n For dinner, I'll make us some ${foodVariable} \n while you prepare 2 glasses of ${drinkVariable}. \n After Dinner we can play ${gameVariable} and listen to ${songVariable}!`;
 
-    console.log(textString);
+    var textBox = document.querySelector("#theText");
+    textBox.innerHTML = textString;
 
 }
+
+var theCopyButton = document.querySelector("#copyText");
+theCopyButton.addEventListener("click", function() {
+    
+    var content = document.getElementById('theText');
+    
+    content.select();
+    document.execCommand('copy');
+    alert("Copied!");
+
+})

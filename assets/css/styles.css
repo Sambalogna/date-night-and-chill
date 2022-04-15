@@ -212,10 +212,11 @@ footer {
 
 #message {
     display: none;
+    text-align: center;
 }
 
 .messagebg {
-    background-image: url("https://cdn.allthings.how/wp-content/uploads/2018/05/9e81f-messages-in-icloud.jpg");
+    background-image: url("https://www.teahub.io/photos/full/44-444380_dark-backgrounds-group-cool-dark-colors-background.jpg");
     background-position: center center; 
     background-repeat: no-repeat;
 }
@@ -224,4 +225,31 @@ footer {
     float: center;
     margin-top: 30px;
     margin-bottom: 30px;
+}
+
+
+#theText {
+    width: 650px;
+    height: 200px;
+    max-width: 100%;
+    background-color: black;
+    color: white;
+    margin-top: 5em;
+    /* margin-bottom: 1em; */
+    /* margin-left: 1em; */
+    font-family: 'Bebas Neue', cursive;
+    text-align: center;
+    font-size: larger;
+}
+
+#copyText {
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 10px;
+    padding-bottom: 45px;
+    margin-left: 1em;
+}
+
+#copyDiv {
+    text-align: center;
 }
