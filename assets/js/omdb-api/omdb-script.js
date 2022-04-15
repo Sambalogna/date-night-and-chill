@@ -117,14 +117,58 @@ $("#movieBtn").on("click", function (event) {
             console.log("movie: ", data);
             var movieData = data;
 
+            var titleYear = movieData.Year;
+            var titleName = movieData.Title;
+            var titlePoster = movieData.Poster;
+            var titlePlot = movieData.Plot;
+
             $("#movieInfo").append().html(
                 `<div id="movie">
-                    <h4>${movieData.Title} <sup>${movieData.Year}</sup></h4>
-                    <h5>${movieData.Plot}</h5>
+                    <h4>${titleName} <sup>${titleYear}</sup></h4>
+                    <h5>${titlePlot}</h5>
                 </div>`
             );
             $("#movieImg").append().html(
-                `<img class="movieImg" width="15%" src="${movieData.Poster}" />`
+                `<img class="movieImg" width="15%" src="${titlePoster}" />`
             )
+
+            var myLocalMovieStore = {
+                movieYear: titleYear,
+                movieName: titleName,
+                moviePoster: titlePoster,
+                moviePlot: titlePlot,
+            }
+
+            var movieLocalStorage = JSON.stringify(myLocalMovieStore)
+            localStorage.setItem("MovieStorage", movieLocalStorage);
+            var useMovieStorage = JSON.parse(localStorage.getItem("MovieStorage"))
+            console.log(useMovieStorage);
+            $("#savedMovies").append().html(`
+                <div class="container center">
+                    <div class="col">
+                        <div class="card">
+                            <div id= "savedTitleImage" class="card-image ">
+                                
+                            </div>
+
+                            <div Id="savedMovieInfo" class="card-content cardStyle foodCard"> 
+                                <span>WHAT TO COOK?</span>
+                            </div>
+                            <div id= "savedMovieCardAction" class="card-action ">
+                                <a class="waves-effect waves-light btn" id="dinnerBtn" href="#dinner">New Food</a>
+                                <a class="waves-effect waves-light btn" id="saveFoodBtn">Confirm choice</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>`
+            );
+            $("#savedTitleImage").append().html(`<div>
+                <img id="savedMovieImage"  src="${useMovieStorage.moviePoster}""></div>`);
+
+            $("#savedMovieInfo").append().html(`
+                <h4>${useMovieStorage.movieName}<sup>${useMovieStorage.movieYear}</sup></h4>
+                <h5>${useMovieStorage.moviePlot}</h5>
+                `);
+
         });
 });
