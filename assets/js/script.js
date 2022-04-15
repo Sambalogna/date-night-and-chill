@@ -115,7 +115,10 @@ function makeButton() {
     generateMessage.innerHTML = "GENERATE MESSAGE";
     generateMessage.setAttribute("id", "generateButton");
     generateMessage.classList.add("btn");
-    $("#combo").append(generateMessage);
+    var theButtonDiv = document.createElement("div");
+    theButtonDiv.setAttribute("id", "generateButtonDiv")
+    theButtonDiv.appendChild(generateMessage)
+    $("#combo").append(theButtonDiv);
 
     //When you click generate message button
     generateMessage.addEventListener("click", function() {

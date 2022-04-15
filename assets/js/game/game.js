@@ -112,7 +112,7 @@ function randomGame() {
                 <div class="card">
 
                 <div class = "card-content cardStyle gameCard">
-                
+                    <span>TIME TO PLAY</span>
                     <div id="savedGImage" class="card-image"></div>
 
                     <div id="savedGameInfo"></div>
