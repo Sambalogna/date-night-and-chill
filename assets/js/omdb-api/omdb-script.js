@@ -154,10 +154,6 @@ $("#movieBtn").on("click", function (event) {
                             <div Id="savedMovieInfo" class="card-content cardStyle foodCard"> 
                                 <span>WHAT TO COOK?</span>
                             </div>
-                            <div id= "savedMovieCardAction" class="card-action ">
-                                <a class="waves-effect waves-light btn" id="dinnerBtn" href="#dinner">New Food</a>
-                                <a class="waves-effect waves-light btn" id="saveFoodBtn">Confirm choice</a>
-                            </div>
                         </div>
                     </div>
                 </div>`
