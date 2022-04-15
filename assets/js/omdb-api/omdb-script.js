@@ -67,13 +67,15 @@ function getMovieLocalStorage() {
             <div class="container center">
                 <div class="col">
                     <div class="card">
-                        <div id= "savedTitleImage" class="card-image ">
-                            
-                        </div>
+                    <div class="card-content cardStyle omdbCard">
+                    <span>GET MY MOVIE!</span>
+                    <div id="savedTitleImage" class="card-image">
+                    </div>
+                    <div id="savedMovieInfo">
+                    </div>
+                </div>
 
-                        <div Id="savedMovieInfo" class="card-content cardStyle foodCard"> 
-                            <span>WHAT TO COOK?</span>
-                        </div>
+                    
                     </div>
                 </div>
             </div>`
@@ -83,7 +85,6 @@ function getMovieLocalStorage() {
 
     $("#savedMovieInfo").append().html(`
             <h4>${useMovieStorage.movieName}<sup>${useMovieStorage.movieYear}</sup></h4>
-            <h5>${useMovieStorage.moviePlot}</h5>
             `);
 };
 
