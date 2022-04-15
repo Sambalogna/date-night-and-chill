@@ -34,23 +34,69 @@ function randomGame() {
 
     console.log(gamesArrImg[randomNum]);
 
+    var gameName = gamesArr[randomNum];
+    var gameImage = gamesArrImg[randomNum];
+    var gameGoogleUrl = "https://www.google.com/search?q=" + gameName;
+
 
     $("#gameImg").append().html(
-        `<img src="${gamesArrImg[randomNum]}"/>`
+        `<img src="${gameImage}"/>`
     )
 
     $("#gameInfo").append().html(
         `<div>
-            <h4>${gamesArr[randomNum]}</h4>
+            <h4>${gameName}</h4>
         </div>`
     )
     $("#howToPlay").append().html(
-        `<a class="waves-effect waves-light btn" href="https://www.google.com/search?q=${gamesArr[randomNum]}">Google</a>`
+        `<a class="waves-effect waves-light btn" href="${gameGoogleUrl}">Google</a>`
     )
+
+
+
+    var myLocalGameStore = {
+        gameURLObj: gameGoogleUrl,
+        gameNameObj: gameName,
+        gameImageObj: gameImage,
+    }
+
+    var gameLocalStorage = JSON.stringify(myLocalGameStore)
+    localStorage.setItem("GameStorage", gameLocalStorage);
+    var useGameStorage = JSON.parse(localStorage.getItem("GameStorage"))
+    console.log(useGameStorage);
+    $("#savedGame").append().html(`
+        <div class="container center">
+            <div class="col">
+                <div class="card">
+                    <div id= "savedGImage" class="card-image ">
+                        
+                    </div>
+
+                    <div Id="savedGameInfo" class="card-content cardStyle foodCard"> 
+                    </div>
+
+
+                    <span id="savedHowToPlay"></span>
+
+                </div>
+            </div>
+        </div>`
+    );
+    $("#savedGImage").append().html(`<div>
+        <img id="savedGameImage"  src="${useGameStorage.gameImageObj}""></div>`)
+
+    $("#savedGameInfo").append().html(`<h4>${useGameStorage.gameNameObj}</h4>
+        `)
+
+    $("#savedHowToPlay").append().html(
+        `<a class="waves-effect waves-light btn" href="${useGameStorage.gameURLObj}">Google</a>`
+    )
+
 }
 
 $("#gamesBtn").on("click", function (event) {
     event.preventDefault();
+    $("#saveGameBtn").css("pointerEvents", "auto !important");
     randomGame();
 })
 
